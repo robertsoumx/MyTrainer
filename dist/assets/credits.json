@@ -1,0 +1,676 @@
+{
+  "acquiredAt": "2026-10-24",
+  "models": [
+    {
+      "id": "ak47",
+      "path": "models/ak47.glb",
+      "title": "AK-47",
+      "author": "taradavies",
+      "license": "CC0 1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sources": [
+        {
+          "title": "AK-47",
+          "author": "taradavies",
+          "url": "https://opengameart.org/content/ak-47-1",
+          "license": "CC0 1.0",
+          "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+        },
+        {
+          "title": "Fps arms",
+          "author": "DJMaesen (bumstrum)",
+          "url": "https://sketchfab.com/3d-models/fps-arms-9452ce4cddde4110a4fd73e555a8e412",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+        },
+        {
+          "title": "FPS rig / grip templates",
+          "author": "ccransh",
+          "url": "https://sketchfab.com/3d-models/fps-ak-74m-animations-94be8385c402474cacd39bc096c6ca14",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+        }
+      ],
+      "mirror": "https://github.com/cktang88/3d-fps",
+      "credit": "AK-47 by taradavies; CC0 1.0. First-person rig includes gloved arms by DJMaesen and rig/grip templates by ccransh (CC BY 4.0).",
+      "modifications": "Upstream adaptation and optimisation by IRONLINE / Operation Steel Tide. Stratum uses runtime scaling, posing and animation. Not an official Riot Games or Valve game asset.",
+      "bytes": 1958644,
+      "sha256": "8dbf4a8eaa22a1b79a227fb85a19e99fc01238e174e31a941d8bacafcb1e6c65",
+      "extensionsRequired": [
+        "EXT_meshopt_compression",
+        "EXT_texture_webp",
+        "KHR_mesh_quantization"
+      ],
+      "animations": [
+        "grip_vgrip"
+      ],
+      "framing": {
+        "K": 2.0,
+        "cls": "rifle",
+        "hip": {
+          "pos": [
+            0.068,
+            0.144,
+            -0.052
+          ],
+          "rot": [
+            0.0,
+            0.0,
+            5.0
+          ],
+          "boreRef": [
+            0.0,
+            0.0860000029206276,
+            0.020266661420464516
+          ]
+        },
+        "boreZ": 0.04053332190960646,
+        "web": [
+          0.172,
+          -0.095
+        ],
+        "trig": [
+          0.315,
+          -0.12
+        ],
+        "maxPenetrationMm": 0.19
+      }
+    },
+    {
+      "id": "m4a1",
+      "path": "models/m4a1.glb",
+      "title": "M4A1",
+      "author": "Firewarden",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "sources": [
+        {
+          "title": "M4A1",
+          "author": "Firewarden",
+          "url": "https://sketchfab.com/3d-models/m4a1-40d8ef818c7549a896371cbb1f64fec6",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+        },
+        {
+          "title": "Fps arms",
+          "author": "DJMaesen (bumstrum)",
+          "url": "https://sketchfab.com/3d-models/fps-arms-9452ce4cddde4110a4fd73e555a8e412",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+        },
+        {
+          "title": "FPS rig / grip templates",
+          "author": "ccransh",
+          "url": "https://sketchfab.com/3d-models/fps-ak-74m-animations-94be8385c402474cacd39bc096c6ca14",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+        }
+      ],
+      "mirror": "https://github.com/cktang88/3d-fps",
+      "credit": "M4A1 by Firewarden; CC BY 4.0. First-person rig includes gloved arms by DJMaesen and rig/grip templates by ccransh (CC BY 4.0).",
+      "modifications": "Upstream adaptation and optimisation by IRONLINE / Operation Steel Tide. Stratum uses runtime scaling, posing and animation. Not an official Riot Games or Valve game asset.",
+      "bytes": 1497044,
+      "sha256": "f66a03a316e8ac6a1505b21c3c7cf8ad4672fccaf1ce947a9ea5ed33600364fc",
+      "extensionsRequired": [
+        "EXT_meshopt_compression",
+        "EXT_texture_webp",
+        "KHR_mesh_quantization"
+      ],
+      "animations": [
+        "grip_vgrip"
+      ],
+      "framing": {
+        "K": 2.0,
+        "cls": "rifle",
+        "hip": {
+          "pos": [
+            0.068,
+            0.144,
+            -0.052
+          ],
+          "rot": [
+            0.0,
+            0.0,
+            5.0
+          ],
+          "boreRef": [
+            0.0,
+            -0.14749999344348907,
+            0.05503007769584656
+          ]
+        },
+        "boreZ": 0.11006015539169312,
+        "web": [
+          -0.295,
+          0.012
+        ],
+        "trig": [
+          -0.182,
+          -0.014
+        ],
+        "maxPenetrationMm": 0.18
+      }
+    },
+    {
+      "id": "awm",
+      "path": "models/awm.glb",
+      "title": "AWM",
+      "author": "erhanmatur",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "sources": [
+        {
+          "title": "AWM",
+          "author": "erhanmatur",
+          "url": "https://sketchfab.com/3d-models/awm-bacc05ad5c074c9daa3aa7ca02766a6c",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+        },
+        {
+          "title": "Fps arms",
+          "author": "DJMaesen (bumstrum)",
+          "url": "https://sketchfab.com/3d-models/fps-arms-9452ce4cddde4110a4fd73e555a8e412",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+        },
+        {
+          "title": "FPS rig / grip templates",
+          "author": "ccransh",
+          "url": "https://sketchfab.com/3d-models/fps-ak-74m-animations-94be8385c402474cacd39bc096c6ca14",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+        }
+      ],
+      "mirror": "https://github.com/cktang88/3d-fps",
+      "credit": "AWM by erhanmatur; CC BY 4.0. First-person rig includes gloved arms by DJMaesen and rig/grip templates by ccransh (CC BY 4.0).",
+      "modifications": "Upstream adaptation and optimisation by IRONLINE / Operation Steel Tide. Stratum uses runtime scaling, posing and animation. Not an official Riot Games or Valve game asset.",
+      "bytes": 1355460,
+      "sha256": "73b224e2beb43ceb689ae7e3cc91cf0a30d863249d9826b19fd69b01082d95c2",
+      "extensionsRequired": [
+        "EXT_meshopt_compression",
+        "EXT_texture_webp",
+        "KHR_mesh_quantization"
+      ],
+      "animations": [],
+      "framing": {
+        "K": 2.0,
+        "cls": "sniper",
+        "hip": {
+          "pos": [
+            0.08,
+            0.2,
+            -0.066
+          ],
+          "rot": [
+            0.0,
+            0.0,
+            4.0
+          ],
+          "boreRef": [
+            0.0,
+            -0.2874999940395355,
+            0.02417748048901558
+          ]
+        },
+        "boreZ": 0.04835496097803116,
+        "web": [
+          -0.575,
+          -0.05
+        ],
+        "trig": [
+          -0.43,
+          -0.11
+        ],
+        "maxPenetrationMm": 0.0
+      }
+    },
+    {
+      "id": "p226",
+      "path": "models/p226.glb",
+      "title": "Sig Sauer P226",
+      "author": "Alexcanot",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "sources": [
+        {
+          "title": "Sig Sauer P226",
+          "author": "Alexcanot",
+          "url": "https://sketchfab.com/3d-models/sig-sauer-p226-e3d4f1ab22f342f4a0891743353c114c",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+        },
+        {
+          "title": "Fps arms",
+          "author": "DJMaesen (bumstrum)",
+          "url": "https://sketchfab.com/3d-models/fps-arms-9452ce4cddde4110a4fd73e555a8e412",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+        },
+        {
+          "title": "FPS rig / grip templates",
+          "author": "ccransh",
+          "url": "https://sketchfab.com/3d-models/fps-ak-74m-animations-94be8385c402474cacd39bc096c6ca14",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+        }
+      ],
+      "mirror": "https://github.com/cktang88/3d-fps",
+      "credit": "Sig Sauer P226 by Alexcanot; CC BY 4.0. First-person rig includes gloved arms by DJMaesen and rig/grip templates by ccransh (CC BY 4.0).",
+      "modifications": "Upstream adaptation and optimisation by IRONLINE / Operation Steel Tide. Stratum uses runtime scaling, posing and animation. Not an official Riot Games or Valve game asset.",
+      "bytes": 1352876,
+      "sha256": "816f5aabef75c58d659728d3b8cac80ea4257475fc2dd325b00349b4fe3ab966",
+      "extensionsRequired": [
+        "EXT_meshopt_compression",
+        "EXT_texture_webp",
+        "KHR_mesh_quantization"
+      ],
+      "animations": [],
+      "framing": {
+        "K": 2.0,
+        "cls": "pistol",
+        "hip": {
+          "pos": [
+            0.05,
+            0.22,
+            -0.035
+          ],
+          "rot": [
+            1.0,
+            1.0,
+            2.0
+          ],
+          "boreRef": [
+            0.0,
+            -0.07999999821186066,
+            0.04892900213599205
+          ]
+        },
+        "boreZ": 0.09785800613462925,
+        "web": [
+          -0.16,
+          0.06
+        ],
+        "trig": [
+          -0.005,
+          0.02
+        ],
+        "maxPenetrationMm": 1.69
+      }
+    },
+    {
+      "id": "mp5a5",
+      "path": "models/mp5a5.glb",
+      "title": "MP5 Submachine Gun",
+      "author": "Rotuma",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "sources": [
+        {
+          "title": "MP5 Submachine Gun",
+          "author": "Rotuma",
+          "url": "https://sketchfab.com/3d-models/mp5-submachine-gun-a73b61932a0e4eecb5db5c63c158aa24",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+        },
+        {
+          "title": "Fps arms",
+          "author": "DJMaesen (bumstrum)",
+          "url": "https://sketchfab.com/3d-models/fps-arms-9452ce4cddde4110a4fd73e555a8e412",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+        },
+        {
+          "title": "FPS rig / grip templates",
+          "author": "ccransh",
+          "url": "https://sketchfab.com/3d-models/fps-ak-74m-animations-94be8385c402474cacd39bc096c6ca14",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+        }
+      ],
+      "mirror": "https://github.com/cktang88/3d-fps",
+      "credit": "MP5 Submachine Gun by Rotuma; CC BY 4.0. First-person rig includes gloved arms by DJMaesen and rig/grip templates by ccransh (CC BY 4.0).",
+      "modifications": "Upstream adaptation and optimisation by IRONLINE / Operation Steel Tide. Stratum uses runtime scaling, posing and animation. Not an official Riot Games or Valve game asset.",
+      "bytes": 1913500,
+      "sha256": "90f223cbd44a75463a09b5cefaa594cbc8a61276ce31ba0b0734c8735701e1da",
+      "extensionsRequired": [
+        "EXT_meshopt_compression",
+        "EXT_texture_webp",
+        "KHR_mesh_quantization"
+      ],
+      "animations": [
+        "grip_vgrip"
+      ],
+      "framing": {
+        "K": 2.0,
+        "cls": "smg",
+        "hip": {
+          "pos": [
+            0.072,
+            0.18,
+            -0.056
+          ],
+          "rot": [
+            0.0,
+            0.0,
+            5.0
+          ],
+          "boreRef": [
+            0.0,
+            -0.054999999701976776,
+            0.04939936473965645
+          ]
+        },
+        "boreZ": 0.09879872761666775,
+        "web": [
+          -0.11,
+          0.02
+        ],
+        "trig": [
+          0.0,
+          -0.02
+        ],
+        "maxPenetrationMm": 1.63
+      }
+    },
+    {
+      "id": "shotgun",
+      "path": "models/shotgun.glb",
+      "title": "FPS Arms Remington (shotgun)",
+      "author": "ccransh; Remington 870 by tris09",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "sources": [
+        {
+          "title": "FPS Arms Remington (shotgun)",
+          "author": "ccransh; Remington 870 by tris09",
+          "url": "https://sketchfab.com/3d-models/fps-arms-remington-shotgun-e68ef617fe8a48cca8610d016ffd5881",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+        },
+        {
+          "title": "Fps arms",
+          "author": "DJMaesen (bumstrum)",
+          "url": "https://sketchfab.com/3d-models/fps-arms-9452ce4cddde4110a4fd73e555a8e412",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+        },
+        {
+          "title": "FPS rig / grip templates",
+          "author": "ccransh",
+          "url": "https://sketchfab.com/3d-models/fps-ak-74m-animations-94be8385c402474cacd39bc096c6ca14",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+        }
+      ],
+      "mirror": "https://github.com/cktang88/3d-fps",
+      "credit": "FPS Arms Remington (shotgun) by ccransh; Remington 870 by tris09; CC BY 4.0. First-person rig includes gloved arms by DJMaesen and rig/grip templates by ccransh (CC BY 4.0).",
+      "modifications": "Upstream adaptation and optimisation by IRONLINE / Operation Steel Tide. Stratum uses runtime scaling, posing and animation. Not an official Riot Games or Valve game asset.",
+      "bytes": 1069880,
+      "sha256": "4742e0c81134182063dcdc7f31c30e723867c4d08aa8370b4b06c33bb0f15b32",
+      "extensionsRequired": [
+        "EXT_meshopt_compression",
+        "EXT_texture_webp",
+        "KHR_mesh_quantization"
+      ],
+      "animations": [],
+      "framing": {
+        "K": 2.0,
+        "cls": "shotgun",
+        "hip": {
+          "pos": [
+            0.068,
+            0.144,
+            -0.054
+          ],
+          "rot": [
+            0.0,
+            0.0,
+            5.0
+          ],
+          "boreRef": [
+            0.0,
+            -0.2524999976158142,
+            0.0638633668422699
+          ]
+        },
+        "boreZ": 0.1277267411351204,
+        "web": [
+          -0.505,
+          0.052
+        ],
+        "trig": [
+          -0.335,
+          -0.03
+        ],
+        "maxPenetrationMm": 0.27
+      }
+    },
+    {
+      "id": "desert_eagle",
+      "path": "models/desert_eagle.glb",
+      "title": "Desert Eagle",
+      "author": "ELIZION",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "sources": [
+        {
+          "title": "Desert Eagle",
+          "author": "ELIZION",
+          "url": "https://sketchfab.com/3d-models/desert-eagle-cabde59f5cf24effaf80536e35d04e95",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+        }
+      ],
+      "mirror": "https://github.com/AetherRadar/operation-steel-tide",
+      "credit": "Desert Eagle by ELIZION; CC BY 4.0",
+      "modifications": "Upstream adaptation and optimisation by IRONLINE / Operation Steel Tide. Stratum uses runtime scaling, posing and animation. Not an official Riot Games or Valve game asset.",
+      "bytes": 11502692,
+      "sha256": "87b22c44a9b58d0a3aaee72232480de35008d95534f11ad84c8ae9a2cf4f9063",
+      "extensionsRequired": [],
+      "animations": [],
+      "framing": {
+        "scaleHint": 0.01,
+        "rawBoundsMin": [
+          -2.454412747,
+          10.011424979,
+          -16.837038058
+        ],
+        "rawBoundsMax": [
+          2.454412955,
+          26.238233656,
+          10.83845579
+        ]
+      }
+    }
+  ],
+  "textures": [
+    {
+      "id": "Plaster003",
+      "title": "Plaster 003",
+      "author": "ambientCG / Lennart Demes",
+      "source": "https://ambientcg.com/view?id=Plaster003",
+      "license": "CC0 1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mirror": "https://github.com/cktang88/3d-fps/tree/main/public/assets/textures/Plaster003",
+      "maps": [
+        {
+          "path": "textures/Plaster003/Color.webp",
+          "bytes": 411002,
+          "sha256": "ef0a596b903b5a39849f323dda813b658f75165d7aecf497e2c76d50fbdfae33"
+        },
+        {
+          "path": "textures/Plaster003/NormalGL.webp",
+          "bytes": 479918,
+          "sha256": "486ecfcb041ab71a5deb7e560d7e41dcbe8e3dad195049d914eac2d6eaa4d35b"
+        },
+        {
+          "path": "textures/Plaster003/Roughness.webp",
+          "bytes": 20274,
+          "sha256": "b1f5c0e514fdf94fd6c55e5a6d181c56706873e24ed6aa526a1e3c416f1177e2"
+        }
+      ],
+      "modifications": "WebP conversion in the upstream mirror; used as a tiling surface material."
+    },
+    {
+      "id": "Bricks097",
+      "title": "Bricks 097",
+      "author": "ambientCG / Lennart Demes",
+      "source": "https://ambientcg.com/view?id=Bricks097",
+      "license": "CC0 1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mirror": "https://github.com/cktang88/3d-fps/tree/main/public/assets/textures/Bricks097",
+      "maps": [
+        {
+          "path": "textures/Bricks097/Color.webp",
+          "bytes": 654112,
+          "sha256": "23904ccd8c96a9296c6c5f64e68bd1b1a11c3516c3e68b1fc2ec9fcc77268f09"
+        },
+        {
+          "path": "textures/Bricks097/NormalGL.webp",
+          "bytes": 616596,
+          "sha256": "e7751cd0890c092fb4737df5568436ed3e49ab773d0fcae319031c28e062d495"
+        },
+        {
+          "path": "textures/Bricks097/Roughness.webp",
+          "bytes": 167388,
+          "sha256": "ee792e1912951529d06f36c61e5c61af186eb480a0111f302bb3a1289b27b61b"
+        }
+      ],
+      "modifications": "WebP conversion in the upstream mirror; used as a tiling surface material."
+    },
+    {
+      "id": "concrete_floor",
+      "title": "Concrete Floor",
+      "author": "eye-candy.xyz / Poly Haven",
+      "source": "https://polyhaven.com/a/concrete_floor",
+      "license": "CC0 1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mirror": "https://github.com/cktang88/3d-fps/tree/main/public/assets/textures/concrete_floor",
+      "maps": [
+        {
+          "path": "textures/concrete_floor/Color.webp",
+          "bytes": 341436,
+          "sha256": "4e6a0ce006cdf2511fd8a41a1de9315185417b6f0980272a6662c483bff7f67f"
+        },
+        {
+          "path": "textures/concrete_floor/NormalGL.webp",
+          "bytes": 289066,
+          "sha256": "f20d6dabb014397a226866010d249981eb7cb7cac1a413896d8089e506d04163"
+        },
+        {
+          "path": "textures/concrete_floor/Roughness.webp",
+          "bytes": 73356,
+          "sha256": "9e40101bf6c630c0fa3dbc42104f91767d887c86c851738830e7323df343c093"
+        }
+      ],
+      "modifications": "WebP conversion in the upstream mirror; used as a tiling surface material."
+    },
+    {
+      "id": "rusty_painted_metal",
+      "title": "Rusty Painted Metal",
+      "author": "Amal Kumar / Poly Haven",
+      "source": "https://polyhaven.com/a/rusty_painted_metal",
+      "license": "CC0 1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mirror": "https://github.com/cktang88/3d-fps/tree/main/public/assets/textures/rusty_painted_metal",
+      "maps": [
+        {
+          "path": "textures/rusty_painted_metal/Color.webp",
+          "bytes": 59444,
+          "sha256": "b2eb5dbdd7ea303f4bd480239d0c67e08b14bb3cf87296bf09cde35b4b332b5d"
+        },
+        {
+          "path": "textures/rusty_painted_metal/NormalGL.webp",
+          "bytes": 42312,
+          "sha256": "dd22292c9843dbf24b56594ce0c06ddeaaf27e1f4cd5eb7f8c3903a22272aa11"
+        },
+        {
+          "path": "textures/rusty_painted_metal/Roughness.webp",
+          "bytes": 27496,
+          "sha256": "8fda7bc541782bef784e8116a8eb8398f6c7682e59e3f0cbc686077f76ea339b"
+        }
+      ],
+      "modifications": "WebP conversion in the upstream mirror; used as a tiling surface material."
+    }
+  ],
+  "assetBytes": 25699926,
+  "notes": [
+    "First-person assets represent the named physical weapon families. They are not exact official CS2 or VALORANT meshes.",
+    "All six FP rigs include arms. They require the locally provided Three.js MeshoptDecoder plus WebP support; no Draco is needed.",
+    "No aim/fire/reload gameplay animation clips are claimed from the FP files; grip_vgrip is only a pose clip.",
+    "The six compressed FP rigs reference shared arms_basecolor.webp and arms_normal.webp beside the GLBs; these are shipped locally and image-verified."
+  ],
+  "sharedArmTextures": [
+    {
+      "path": "models/arms_basecolor.webp",
+      "bytes": 136406,
+      "sha256": "4657bc61099b7cf92084c5481c0c6d19a1d8219c8ee8c08e546f9f823fec6946",
+      "source": "https://raw.githubusercontent.com/cktang88/3d-fps/main/public/assets/models/fp/arms_basecolor.webp",
+      "author": "DJMaesen (bumstrum), adapted and WebP-encoded by IRONLINE",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "referencedBy": [
+        "ak47.glb",
+        "m4a1.glb",
+        "awm.glb",
+        "p226.glb",
+        "mp5a5.glb",
+        "shotgun.glb"
+      ]
+    },
+    {
+      "path": "models/arms_normal.webp",
+      "bytes": 278326,
+      "sha256": "0500bdd5e6045621d980105cc281312dd6d7fc66a6649ddbe632fea802dba881",
+      "source": "https://raw.githubusercontent.com/cktang88/3d-fps/main/public/assets/models/fp/arms_normal.webp",
+      "author": "DJMaesen (bumstrum), adapted and WebP-encoded by IRONLINE",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "referencedBy": [
+        "ak47.glb",
+        "m4a1.glb",
+        "awm.glb",
+        "p226.glb",
+        "mp5a5.glb",
+        "shotgun.glb"
+      ]
+    }
+  ],
+  "officialCatalogs": [
+    {
+      "title": "Riot Games VALORANT Public Content Catalog (selected weapon icons)",
+      "publisher": "Riot Games, Inc.",
+      "path": "assets/catalog/valorant/manifest.json",
+      "bytes": 1099176,
+      "source": "https://valorant.dyn.riotcdn.net/x/content-catalog/PublicContentCatalog-release-08.09.zip",
+      "documentation": "https://developer.riotgames.com/docs/valorant#assets",
+      "license": "Riot Public Content Catalog / developer terms and policies (not CC)",
+      "scope": "Informational reference thumbnails; subject to developer policies and product registration/audit requirements. No official 3D game assets."
+    }
+  ],
+  "officialAssetReview": "assets/catalog/valve-geometry-review.json",
+  "fonts": [
+    {
+      "title": "Inter Variable (upright)",
+      "author": "The Inter Project Authors; Rasmus Andersson",
+      "license": "SIL Open Font License 1.1 (OFL-1.1)",
+      "licensePath": "assets/fonts/Inter-OFL.txt",
+      "licenseUrl": "https://raw.githubusercontent.com/rsms/inter/353b61b9f4430d5f420d56605a6e7993e0941470/LICENSE.txt",
+      "path": "assets/fonts/InterVariable.woff2",
+      "source": "https://raw.githubusercontent.com/rsms/inter/353b61b9f4430d5f420d56605a6e7993e0941470/docs/font-files/InterVariable.woff2",
+      "repository": "https://github.com/rsms/inter",
+      "revision": "353b61b9f4430d5f420d56605a6e7993e0941470",
+      "bytes": 352240,
+      "sha256": "693b77d4f32ee9b8bfc995589b5fad5e99adf2832738661f5402f9978429a8e3",
+      "modifications": "None; original official WOFF2 copied without subsetting or re-encoding."
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "name": "stratum-tactical-performance-lab",
+  "version": "1.3.0",
+  "private": true,
+  "description": "Adaptive browser practice for CS2 and VALORANT, with transparent measurement boundaries.",
+  "scripts": {
+    "test": "node tests/movement.cjs && node tests/weapons.cjs && node tests/world3d.cjs && node tests/verify.cjs",
+    "check": "node --check dist/core.js && node --check dist/content.js && node --check dist/weapon-data.js && node --check dist/weapon-sim.js && node --check dist/compat-weapon.js && node --check dist/world3d.js && node --check dist/movement.js && node --check dist/range.js && node --check dist/app.js",
+    "build": "node scripts/build-graphics.mjs"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.11",
+    "jsdom": "30.1.1",
+    "three": "^0.180.0"
+  }
+}

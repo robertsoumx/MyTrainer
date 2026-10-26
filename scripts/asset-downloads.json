@@ -1,0 +1,117 @@
+[
+  {
+    "path": "dist/assets/models/ak47.glb",
+    "url": "https://raw.githubusercontent.com/cktang88/3d-fps/130ac2a5c856401ec36e7d35afcfefe40c5801f4/public/assets/models/fp/ak47.glb",
+    "sha256": "8dbf4a8eaa22a1b79a227fb85a19e99fc01238e174e31a941d8bacafcb1e6c65"
+  },
+  {
+    "path": "dist/assets/models/m4a1.glb",
+    "url": "https://raw.githubusercontent.com/cktang88/3d-fps/130ac2a5c856401ec36e7d35afcfefe40c5801f4/public/assets/models/fp/m4a1.glb",
+    "sha256": "f66a03a316e8ac6a1505b21c3c7cf8ad4672fccaf1ce947a9ea5ed33600364fc"
+  },
+  {
+    "path": "dist/assets/models/awm.glb",
+    "url": "https://raw.githubusercontent.com/cktang88/3d-fps/130ac2a5c856401ec36e7d35afcfefe40c5801f4/public/assets/models/fp/awm.glb",
+    "sha256": "73b224e2beb43ceb689ae7e3cc91cf0a30d863249d9826b19fd69b01082d95c2"
+  },
+  {
+    "path": "dist/assets/models/p226.glb",
+    "url": "https://raw.githubusercontent.com/cktang88/3d-fps/130ac2a5c856401ec36e7d35afcfefe40c5801f4/public/assets/models/fp/p226.glb",
+    "sha256": "816f5aabef75c58d659728d3b8cac80ea4257475fc2dd325b00349b4fe3ab966"
+  },
+  {
+    "path": "dist/assets/models/mp5a5.glb",
+    "url": "https://raw.githubusercontent.com/cktang88/3d-fps/130ac2a5c856401ec36e7d35afcfefe40c5801f4/public/assets/models/fp/mp5a5.glb",
+    "sha256": "90f223cbd44a75463a09b5cefaa594cbc8a61276ce31ba0b0734c8735701e1da"
+  },
+  {
+    "path": "dist/assets/models/shotgun.glb",
+    "url": "https://raw.githubusercontent.com/cktang88/3d-fps/130ac2a5c856401ec36e7d35afcfefe40c5801f4/public/assets/models/fp/shotgun.glb",
+    "sha256": "4742e0c81134182063dcdc7f31c30e723867c4d08aa8370b4b06c33bb0f15b32"
+  },
+  {
+    "path": "dist/assets/models/desert_eagle.glb",
+    "url": "https://raw.githubusercontent.com/AetherRadar/operation-steel-tide/d6a33b932e00fb9016dea407eca3f909aeaf2dcb/assets/models/elizion_desert_eagle/desert_eagle.glb",
+    "sha256": "87b22c44a9b58d0a3aaee72232480de35008d95534f11ad84c8ae9a2cf4f9063"
+  },
+  {
+    "path": "dist/assets/textures/Plaster003/Color.webp",
+    "url": "https://raw.githubusercontent.com/cktang88/3d-fps/130ac2a5c856401ec36e7d35afcfefe40c5801f4/public/assets/textures/Plaster003/Color.webp",
+    "sha256": "ef0a596b903b5a39849f323dda813b658f75165d7aecf497e2c76d50fbdfae33"
+  },
+  {
+    "path": "dist/assets/textures/Plaster003/NormalGL.webp",
+    "url": "https://raw.githubusercontent.com/cktang88/3d-fps/130ac2a5c856401ec36e7d35afcfefe40c5801f4/public/assets/textures/Plaster003/NormalGL.webp",
+    "sha256": "486ecfcb041ab71a5deb7e560d7e41dcbe8e3dad195049d914eac2d6eaa4d35b"
+  },
+  {
+    "path": "dist/assets/textures/Plaster003/Roughness.webp",
+    "url": "https://raw.githubusercontent.com/cktang88/3d-fps/130ac2a5c856401ec36e7d35afcfefe40c5801f4/public/assets/textures/Plaster003/Roughness.webp",
+    "sha256": "b1f5c0e514fdf94fd6c55e5a6d181c56706873e24ed6aa526a1e3c416f1177e2"
+  },
+  {
+    "path": "dist/assets/textures/Bricks097/Color.webp",
+    "url": "https://raw.githubusercontent.com/cktang88/3d-fps/130ac2a5c856401ec36e7d35afcfefe40c5801f4/public/assets/textures/Bricks097/Color.webp",
+    "sha256": "23904ccd8c96a9296c6c5f64e68bd1b1a11c3516c3e68b1fc2ec9fcc77268f09"
+  },
+  {
+    "path": "dist/assets/textures/Bricks097/NormalGL.webp",
+    "url": "https://raw.githubusercontent.com/cktang88/3d-fps/130ac2a5c856401ec36e7d35afcfefe40c5801f4/public/assets/textures/Bricks097/NormalGL.webp",
+    "sha256": "e7751cd0890c092fb4737df5568436ed3e49ab773d0fcae319031c28e062d495"
+  },
+  {
+    "path": "dist/assets/textures/Bricks097/Roughness.webp",
+    "url": "https://raw.githubusercontent.com/cktang88/3d-fps/130ac2a5c856401ec36e7d35afcfefe40c5801f4/public/assets/textures/Bricks097/Roughness.webp",
+    "sha256": "ee792e1912951529d06f36c61e5c61af186eb480a0111f302bb3a1289b27b61b"
+  },
+  {
+    "path": "dist/assets/textures/concrete_floor/Color.webp",
+    "url": "https://raw.githubusercontent.com/cktang88/3d-fps/130ac2a5c856401ec36e7d35afcfefe40c5801f4/public/assets/textures/concrete_floor/Color.webp",
+    "sha256": "4e6a0ce006cdf2511fd8a41a1de9315185417b6f0980272a6662c483bff7f67f"
+  },
+  {
+    "path": "dist/assets/textures/concrete_floor/NormalGL.webp",
+    "url": "https://raw.githubusercontent.com/cktang88/3d-fps/130ac2a5c856401ec36e7d35afcfefe40c5801f4/public/assets/textures/concrete_floor/NormalGL.webp",
+    "sha256": "f20d6dabb014397a226866010d249981eb7cb7cac1a413896d8089e506d04163"
+  },
+  {
+    "path": "dist/assets/textures/concrete_floor/Roughness.webp",
+    "url": "https://raw.githubusercontent.com/cktang88/3d-fps/130ac2a5c856401ec36e7d35afcfefe40c5801f4/public/assets/textures/concrete_floor/Roughness.webp",
+    "sha256": "9e40101bf6c630c0fa3dbc42104f91767d887c86c851738830e7323df343c093"
+  },
+  {
+    "path": "dist/assets/textures/rusty_painted_metal/Color.webp",
+    "url": "https://raw.githubusercontent.com/cktang88/3d-fps/130ac2a5c856401ec36e7d35afcfefe40c5801f4/public/assets/textures/rusty_painted_metal/Color.webp",
+    "sha256": "b2eb5dbdd7ea303f4bd480239d0c67e08b14bb3cf87296bf09cde35b4b332b5d"
+  },
+  {
+    "path": "dist/assets/textures/rusty_painted_metal/NormalGL.webp",
+    "url": "https://raw.githubusercontent.com/cktang88/3d-fps/130ac2a5c856401ec36e7d35afcfefe40c5801f4/public/assets/textures/rusty_painted_metal/NormalGL.webp",
+    "sha256": "dd22292c9843dbf24b56594ce0c06ddeaaf27e1f4cd5eb7f8c3903a22272aa11"
+  },
+  {
+    "path": "dist/assets/textures/rusty_painted_metal/Roughness.webp",
+    "url": "https://raw.githubusercontent.com/cktang88/3d-fps/130ac2a5c856401ec36e7d35afcfefe40c5801f4/public/assets/textures/rusty_painted_metal/Roughness.webp",
+    "sha256": "8fda7bc541782bef784e8116a8eb8398f6c7682e59e3f0cbc686077f76ea339b"
+  },
+  {
+    "path": "dist/assets/models/arms_basecolor.webp",
+    "url": "https://raw.githubusercontent.com/cktang88/3d-fps/130ac2a5c856401ec36e7d35afcfefe40c5801f4/public/assets/models/fp/arms_basecolor.webp",
+    "sha256": "4657bc61099b7cf92084c5481c0c6d19a1d8219c8ee8c08e546f9f823fec6946"
+  },
+  {
+    "path": "dist/assets/models/arms_normal.webp",
+    "url": "https://raw.githubusercontent.com/cktang88/3d-fps/130ac2a5c856401ec36e7d35afcfefe40c5801f4/public/assets/models/fp/arms_normal.webp",
+    "sha256": "0500bdd5e6045621d980105cc281312dd6d7fc66a6649ddbe632fea802dba881"
+  },
+  {
+    "path": "dist/assets/fonts/InterVariable.woff2",
+    "url": "https://raw.githubusercontent.com/rsms/inter/353b61b9f4430d5f420d56605a6e7993e0941470/docs/font-files/InterVariable.woff2",
+    "sha256": "693b77d4f32ee9b8bfc995589b5fad5e99adf2832738661f5402f9978429a8e3"
+  },
+  {
+    "path": "dist/assets/fonts/Inter-OFL.txt",
+    "url": "https://raw.githubusercontent.com/rsms/inter/353b61b9f4430d5f420d56605a6e7993e0941470/LICENSE.txt",
+    "sha256": "262481e844521b326f5ecd053e59b98c8b2da78c8ee1bdbb6e8174305e54935a"
+  }
+]

@@ -5,3 +5,4 @@ node_modules/
 dist/graphics.js
 dist/assets/models/
 dist/assets/textures/
+dist/assets/fonts/InterVariable.woff2

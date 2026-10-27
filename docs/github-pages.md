@@ -1,8 +1,8 @@
 # GitHub Pages: MyTrainer
 
-Updated October 26, 2026 for version 1.3.0. Source target: [robertsoumx/MyTrainer](https://github.com/robertsoumx/MyTrainer). The application retains the Stratum name in its interface.
+Updated October 27, 2026 for version 1.4.0. Source: [robertsoumx/MyTrainer](https://github.com/robertsoumx/MyTrainer). The application retains the Stratum name.
 
-**Status: publication pending.** The repository has been initialized and the official catalog PNGs uploaded. The scoped implementation review is complete; the final source commit/upload and repository Pages settings step remain pending. A browser sign-in wall blocks that settings step. A prepared workflow and uploaded source files do not establish a live Pages deployment. No hosted site URL has been verified.
+The v1.3 source was committed at `3b72aa8`. GitHub's default Pages workflow completed successfully on October 27, but it built the repository root with Jekyll. That run alone does not verify the application: the app's entry point and compiled assets belong to `dist/`. Version 1.4 is prepared for the custom **Verify and publish MyTrainer** workflow below. The [Actions page](https://github.com/robertsoumx/MyTrainer/actions) is the authoritative deployment record.
 
 ## Repository setup
 
@@ -35,4 +35,4 @@ Serve `dist/` with a static HTTP server for preview. Rebuild after graphics-sour
 
 ## Move an existing profile
 
-On the previous host, use **Customize → Export backup** before changing hosts. On the new Pages URL, use **Import backup** and confirm replacement. Profiles are stored in browser local storage, which is separate for the new host; the repository and Pages workflow do not copy them. Older results remain archived under their original contexts, while version 1.3.0 mechanical practice establishes `:world3d3:<weapon-id>` baselines.
+On the previous host, use **Customize → Export backup** before changing hosts. On the new Pages URL, use **Import backup** and confirm replacement. Profiles are stored in browser local storage, which is separate for the new host; the repository and Pages workflow do not copy them. Older results remain archived under their original contexts, while version 1.4.0 mechanical practice establishes `:world3d4:<weapon-id>` baselines. Playable rounds use `:round3d1:<weapon-id>` and stay separate from full-skill baselines.

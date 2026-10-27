@@ -2,7 +2,7 @@
 
 The mechanical drills take place in original navigable 3D practice maps: **Courtyard 04** for CS2 and **The Pavilion** for VALORANT. Move your player through the map and rotate the camera to aim the centered crosshair. Targets have world positions; walls and bodies can block shots. The Pavilion has open target lanes and a dedicated teal HUD with an elimination panel; Courtyard 04 retains its courtyard, alley, ramp, and catwalk.
 
-In **Training Lab**, choose **Explore 3D map**, then **Enter 3D map** for an untimed walk in the selected game's map. Explore does not save a score or change a baseline. Individual mechanical drills and scenario live stages use that game's map; scenarios can start from different positions.
+In **Drills**, choose **Free practice**, then **Enter 3D map** for an untimed walk in the selected game's map. Explore does not save a score or change a baseline. Mechanical drills use the selected game’s map. Round scenarios use a connected original site with objective, support and route markers. Every scored attempt presents its instructions before Start opens the practice view.
 
 ## Mouse and keyboard
 
@@ -12,7 +12,7 @@ In **Training Lab**, choose **Explore 3D map**, then **Enter 3D map** for an unt
 | Strafe left / right | A / D |
 | Look | Move the captured mouse, or drag the world |
 | Turn left / right | Left / Right arrow |
-| Fire | Left click, F, or the Fire button |
+| Fire | Left click or F |
 | ADS / scope / alternate fire | Right click, or Aim / Alt |
 | Jump | Space |
 | Crouch | Hold Ctrl |
@@ -23,11 +23,13 @@ In **Training Lab**, choose **Explore 3D map**, then **Enter 3D map** for an unt
 | Previous weapon | Q, in Explore |
 | Toggle primary / sidearm | Mouse wheel over the world, in Explore |
 | Pause | Escape or Pause / Esc |
-| Fill the viewport | Expand view; use Exit expanded view to return |
+| Full view | Automatic on Start; Windowed view returns to the workspace |
+| Defuse in The retake | Hold E near the cleared objective |
+| Report in Hold, then rotate | C while a defender is visible |
 
 Under **Customize → 3D camera controls**, FPS camera mode requests mouse capture when you enter the range. Drag camera mode lets you hold and drag the world to look. If capture is unavailable or declined, drag look still works. In either mode, the crosshair stays centered and shots follow the camera direction, including the trainer's recoil and spread. Dragging changes your view; it does not select a target under the pointer.
 
-With capture active, hold left click for automatic fire. You can also hold F or the Fire button. Semi-automatic weapons require a new trigger press for each shot. Without capture, a world click/tap with no drag fires on release; use F or Fire for held fire while drag-looking. Burst modes complete the scheduled burst after trigger release.
+With capture active, hold left click for automatic fire. You can also hold F; Touch profiles have a Fire button. Semi-automatic weapons require a new trigger press for each shot. Without capture, a world click/tap with no drag fires on release; use F or Fire for held fire while drag-looking. Burst modes complete the scheduled burst after trigger release.
 
 The weapon clock is synchronized before trigger presses and releases, so a short tap after a delayed animation frame does not inherit idle time as firing time. Keyboard and each fire pointer retain separate trigger ownership. Releasing an unrelated pointer, including the movement stick, does not cancel another held Fire input; pointer-generated clicks do not add a second shot.
 
@@ -46,7 +48,8 @@ Choose **Touch** under **Customize → Input profile** if automatic detection do
 | Jump | Jump button |
 | Crouch / stand | Crouch button toggles the state |
 | Reload | Reload button |
-| Armory / pause / expand | Use the range actions |
+| Armory / pause / view | Use the range actions |
+| Use / Call | Contextual round buttons; hold Use to defuse |
 
 Movement is relative to the direction you face. Releasing the movement stick returns it to neutral while an independently held Fire pointer can stay active. The right-side actions leave the world available for drag look. Tracking drills need no firing and hide the Fire button. These behaviors have controller-model coverage; simultaneous physical multi-touch remains unverified.
 
@@ -74,7 +77,7 @@ Customize retains the crosshair, sensitivity, appearance, audio, motion, and gam
 
 Vertical world field of view ranges from **50° to 85°**, with a default of **64°**; ADS reduces it by the profile's zoom factor. The separate weapon presentation widens from 52° in landscape to at most 80° in portrait so the gun and arms fit. Keep weapon, world field of view, sensitivity, device, orientation, viewport, input profile, and camera-control mode consistent when repeating a benchmark.
 
-Version 1.3.0 mechanical results establish fresh baselines in the `:world3d3:<weapon-id>` context after the movement and trigger-timing changes. Prior 2D, `:world3d1`, and `:world3d2:<weapon-id>` sessions remain in the progress archive and JSON backup, and do not contribute to v3 proficiency. Game, input, camera-control, and weapon contexts keep separate mechanical results. Export/import your backup when moving to a new host such as GitHub Pages; local browser data does not follow automatically.
+Version 1.4.0 mechanical results establish fresh baselines in `:world3d4:<weapon-id>` after the recoil-timing changes. Prior contexts remain in the progress archive and JSON backup, and do not contribute to v4 proficiency. Playable rounds use `:round3d1:<weapon-id>` and do not establish full-skill baselines. Game, input, camera-control, and weapon contexts keep separate mechanical results. Export/import your backup when moving to a new host such as GitHub Pages; local browser data does not follow automatically.
 
 WebGL2 uses the bundled Three.js renderer with textured geometry, shadows, and environment lighting. A CPU perspective renderer uses the same map and moving camera when WebGL2 is unavailable. It displays a cached projection of the loaded GLB weapon at a fixed pose, with procedural motion; it does not reproduce game animation. If a detailed model cannot load, a simplified weapon is shown with a status message. If no rendering surface can be created, the app presents a return-to-training action. See [rendering details](realistic-rendering.md).
 
@@ -82,4 +85,4 @@ Movement uses the independently written `movement.js` friction/acceleration mode
 
 ## Practice in the native game
 
-**Training Lab → Train in game** opens practice guidance for the installed game. For CS2 it includes an **Open Counter-Strike 2** link using `steam://run/730`; the actual launch depends on the local Steam/browser setup. For VALORANT it gives Riot Client → VALORANT → Play → Practice → The Range directions. Use the native game to practice its actual engine, official weapon models, gun motion, maps, and recoil. The browser does not embed either native engine. No telemetry is linked and those native-game steps are not automatically scored by this trainer.
+**Drills → Train in game** opens practice guidance for the installed game. For CS2 it includes an **Open Counter-Strike 2** link using `steam://run/730`; the actual launch depends on the local Steam/browser setup. For VALORANT it gives Riot Client → VALORANT → Play → Practice → The Range directions. Use the native game to practice its actual engine, official weapon models, gun motion, maps, and recoil. The browser does not embed either native engine. No telemetry is linked and those native-game steps are not automatically scored by this trainer.

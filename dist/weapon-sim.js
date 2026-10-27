@@ -44,14 +44,22 @@
    if(w.unzoomAfterShot&&this.ads){this.ads=false;this.zoom=0;}
    return true;
   }
+  advanceTo(at){
+   // Recover only over the portion of this interval after the recovery delay.
+   const start=Math.max(this.time,this.lastShot+.16),recoverDt=Math.max(0,at-start);
+   if(recoverDt){const decay=Math.exp(-3/(this.weapon.recoil?.recover||.3)*recoverDt);this.punch.x*=decay;this.punch.y*=decay;this.heat=Math.max(0,this.heat-recoverDt*1.6);}
+   this.time=at;
+  }
   update(dt,state={}){
    const end=this.time+Math.max(0,dt);let guard=0;
-   while(this.reloadEnd&&this.reloadEnd<=end&&guard++<64){this.time=this.reloadEnd;const amount=Math.min(this.weapon.reloadStyle==='shell'?1:this.weapon.mag-this.mag,this.reserve);this.mag+=amount;this.reserve-=amount;this.reloadEnd=0;if(this.weapon.reloadStyle==='shell'&&this.mag<this.weapon.mag&&this.reserve>0){this.reloadStart=this.time;this.reloadEnd=this.time+(this.weapon.shellReload||this.weapon.reload);}}
-   const automatic=()=>this.trigger&&this.weapon.fireMode==='auto'&&!(this.altMode&&this.weapon.altFire?.type==='burst');guard=0;
-   while((this.burst>0||automatic())&&this.mag>0&&guard++<64){const at=Math.max(this.time,this.nextShot,this.equipUntil,this.reloadEnd||0);if(at>end+1e-8)break;this.time=at;const pending=this.burst;if(!this.shoot({...state,continuation:pending>0}))break;if(pending>0)this.burst=pending-1;}
-   this.time=end;
-   if(this.time-this.lastShot>.16){const recover=3/(this.weapon.recoil?.recover||.3);this.punch.x*=Math.exp(-recover*dt);this.punch.y*=Math.exp(-recover*dt);this.heat=Math.max(0,this.heat-dt*1.6);}
-   return this.drain();
+   while(guard++<512){
+    const automatic=this.trigger&&this.weapon.fireMode==='auto'&&!(this.altMode&&this.weapon.altFire?.type==='burst');
+    const reloadAt=this.reloadEnd||Infinity,fireAt=(this.burst>0||automatic)&&this.mag>0?Math.max(this.time,this.nextShot,this.equipUntil,this.reloadEnd||0):Infinity;
+    const at=Math.min(reloadAt,fireAt);if(at>end+1e-8)break;this.advanceTo(Math.max(this.time,at));
+    if(reloadAt<=fireAt){const amount=Math.min(this.weapon.reloadStyle==='shell'?1:this.weapon.mag-this.mag,this.reserve);this.mag+=amount;this.reserve-=amount;this.reloadEnd=0;if(this.weapon.reloadStyle==='shell'&&this.mag<this.weapon.mag&&this.reserve>0){this.reloadStart=this.time;this.reloadEnd=this.time+(this.weapon.shellReload||this.weapon.reload);}}
+    else {const pending=this.burst;if(!this.shoot({...state,continuation:pending>0}))break;if(pending>0)this.burst=pending-1;}
+   }
+   this.advanceTo(Math.max(this.time,end));return this.drain();
   }
   drain(){const e=this.events;this.events=[];return e;}
   get zoomFactor(){if(!this.ads)return 1;if(this.weapon.altFire?.type==='scope')return this.weapon.scopeZoom?.[Math.max(0,this.zoom-1)]||2.5;return this.weapon.scopeZoom?.[0]||1.25;}
@@ -59,5 +67,7 @@
   get equipProgress(){return clamp(1-(this.equipUntil-this.time)/(this.weapon.equip||.6),0,1);}
   damage(kind,distance,armor=true){const w=this.weapon,bands=w.damageRanges||[{min:0,max:100,head:140,body:35,leg:28}],band=bands.find(b=>distance>=(b.min??0)&&distance<=(b.max??Infinity))||bands[bands.length-1];let amount=kind==='head'?band.head:kind==='leg'?band.leg:band.body;const m=w.damageModel;if(w.game==='cs2'&&m?.rangeModifier)amount*=Math.pow(m.rangeModifier,distance/12.7);if(armor&&w.game==='cs2'&&kind!=='leg'){const ratio=m?.armorRatio??w.armorRatio??1.55;amount*=Math.min(1,ratio*.5);}return Math.max(0,Math.round(amount));}
  }
- const api={WeaponSimulation,clamp};if(typeof module!=='undefined'&&module.exports)module.exports=api;else root.WeaponSim=api;
+ // A single immediate impulse with a monotonic return: no delayed second lift.
+ function shotEnvelope(time,lastShot){const age=time-lastShot;return age<0||age>.4?0:Math.exp(-age*24);}
+ const api={WeaponSimulation,clamp,shotEnvelope};if(typeof module!=='undefined'&&module.exports)module.exports=api;else root.WeaponSim=api;
 })(typeof window!=='undefined'?window:globalThis);

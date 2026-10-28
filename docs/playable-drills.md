@@ -1,5 +1,7 @@
 # Playable drills — version 1.4
 
+Historical version 1.4 guide treatments. Version 1.5 removes most labels and uses concise preflight instructions; see [the current review](review-v15.md).
+
 Every attempt begins with a brief: three steps, what counts, duration, weapon and controls. Start enters a fixed full-viewport panel and requests browser fullscreen. If the browser declines, the full-viewport panel remains usable. Escape, focus loss and tab hiding pause play. Background navigation is inert while the expanded practice panel is active; leaving restores it.
 
 ## Distinct practice cues

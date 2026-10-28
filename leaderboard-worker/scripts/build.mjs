@@ -1,0 +1,3 @@
+import {rm,mkdir,cp,readFile} from 'node:fs/promises';
+await rm('dist',{recursive:true,force:true});await mkdir('dist/server',{recursive:true});await mkdir('dist/.openai',{recursive:true});await cp('worker/index.js','dist/server/index.js');await cp('.openai/hosting.json','dist/.openai/hosting.json');await cp('drizzle','dist/.openai/drizzle',{recursive:true});
+const source=await readFile('dist/server/index.js','utf8');const mod=await import('data:text/javascript;base64,'+Buffer.from(source).toString('base64'));if(typeof mod.default?.fetch!=='function')throw Error('Invalid Worker artifact');console.log('Worker and immutable migrations packaged.');

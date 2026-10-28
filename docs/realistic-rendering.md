@@ -1,5 +1,7 @@
 # Rendering and weapon presentation
 
+Historical version 1.4 renderer reference. Version 1.5 uses the lightweight world path and prepares/caches the viewmodel before timing; see [the current review](review-v15.md).
+
 Updated October 27, 2026 for version 1.4.0 and the [MyTrainer GitHub Pages migration](github-pages.md). The range gives the navigable world most of the training surface, with a visible weapon, centered aim, HUD, and ammunition state. New profiles default to a light workspace, with locally hosted Inter, a global light/dark toggle, and appearance controls. Training modules, adaptive measurement, and the local profile workflow remain in place.
 
 The browser does **not** embed Valve's Source 2 or Riot's native engine, exact official 3D gun models, or exact game gun motion. The requested native fidelity is not achieved here. **Train in game** supplies guidance and a CS2 Steam launch URI for installed-game practice; it does not connect telemetry or import native-game results.

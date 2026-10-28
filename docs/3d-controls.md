@@ -1,5 +1,7 @@
 # 3D map and controls
 
+Version 1.5 defaults to **Tap** (one shot per press). Choose **Hold** for automatic fire. Opening a drill shows a full-screen brief; model preparation completes before timing starts. The detailed v1.4 reference below is historical where it differs.
+
 The mechanical drills take place in original navigable 3D practice maps: **Courtyard 04** for CS2 and **The Pavilion** for VALORANT. Move your player through the map and rotate the camera to aim the centered crosshair. Targets have world positions; walls and bodies can block shots. The Pavilion has open target lanes and a dedicated teal HUD with an elimination panel; Courtyard 04 retains its courtyard, alley, ramp, and catwalk.
 
 In **Drills**, choose **Free practice**, then **Enter free practice** for an untimed walk in the selected game's map. Explore does not save a score or change a baseline. Mechanical drills use the selected game’s map. Round scenarios use a connected original site with objective, support and route markers. Every scored attempt presents its instructions before Start opens the practice view.
@@ -86,3 +88,7 @@ Movement uses the independently written `movement.js` friction/acceleration mode
 ## Practice in the native game
 
 **Drills → Train in game** opens practice guidance for the installed game. For CS2 it includes an **Open Counter-Strike 2** link using `steam://run/730`; the actual launch depends on the local Steam/browser setup. For VALORANT it gives Riot Client → VALORANT → Play → Practice → The Range directions. Use the native game to practice its actual engine, official weapon models, gun motion, maps, and recoil. The browser does not embed either native engine. No telemetry is linked and those native-game steps are not automatically scored by this trainer.
+
+## Version 1.5 controls
+
+Choose Mouse, Trackpad or Touchscreen in the first-run profile. Tap fires once per press; Hold enables automatic weapons while pressed. Trackpad drag-look rotates the camera; clicking without dragging fires one tap. Recoil offsets the ballistic crosshair without moving the viewing camera. The default world path is now a lightweight 2.5D presentation. Weapon preparation completes before the timer starts. Version 1.5 uses `world3d5`; the v1.4 context above is historical.

@@ -1,8 +1,8 @@
 # GitHub Pages: MyTrainer
 
-Updated October 27, 2026 for version 1.4.0. Source: [robertsoumx/MyTrainer](https://github.com/robertsoumx/MyTrainer). The application retains the Stratum name.
+Updated October 27, 2026 for version 1.5.0. Source: [robertsoumx/MyTrainer](https://github.com/robertsoumx/MyTrainer). The application retains the Stratum name.
 
-**Application deployed:** [Open MyTrainer](https://robertsoumx.github.io/MyTrainer/). Version 1.4 source commit `d4539f9` passed all build steps and deployed in [Actions run 40543905439](https://github.com/robertsoumx/MyTrainer/actions/runs/40543905439). The application is published from the compiled `dist/` artifact.
+**Application deployed:** [Open MyTrainer](https://robertsoumx.github.io/MyTrainer/). The prior version 1.4 source commit `d4539f9` passed all build steps and deployed in [Actions run 40543905439](https://github.com/robertsoumx/MyTrainer/actions/runs/40543905439). The application is published from the compiled `dist/` artifact.
 
 The repository also has GitHub's default branch/Jekyll publisher enabled. To avoid competing final deployments, the app workflow checks the current Pages mode. In branch mode, the workflow waits for **pages build and deployment** on the same commit to finish, then builds and publishes the application. The default dynamic workflow does not emit a usable `workflow_run` completion event here, so the order is checked directly through the Actions API. In Actions mode, pushes publish directly. Manual dispatch remains available. The workflow only reads Pages configuration; it does not change repository settings or require extra credentials.
 
@@ -37,4 +37,10 @@ Serve `dist/` with a static HTTP server for preview. Rebuild after graphics-sour
 
 ## Move an existing profile
 
-On the previous host, use **Customize → Export backup** before changing hosts. On the new Pages URL, use **Import backup** and confirm replacement. Profiles are stored in browser local storage, which is separate for the new host; the repository and Pages workflow do not copy them. Older results remain archived under their original contexts, while version 1.4.0 mechanical practice establishes `:world3d4:<weapon-id>` baselines. Playable rounds use `:round3d1:<weapon-id>` and stay separate from full-skill baselines.
+On the previous host, use **Customize → Export backup** before changing hosts. On the new Pages URL, use **Import backup** and confirm replacement. Profiles are stored in browser local storage, which is separate for the new host; the repository and Pages workflow do not copy them. Older results remain archived under their original contexts, while version 1.5.0 mechanical practice establishes `:world3d4:<weapon-id>` baselines. Playable rounds use `:round3d1:<weapon-id>` and stay separate from full-skill baselines.
+
+## Shared leaderboard
+
+The Pages frontend calls a separate public Worker/D1 API. Its deployment manifest uses the documented `d1: "DB"` binding; generated Drizzle migrations are packaged with the Worker. API source and migration tests are retained under `leaderboard-worker/` in MyTrainer. Private session backups do not contain the public profile device credential. The public profile is tied to its browser; remove it in Customize before discarding that profile. See [version 1.5 review](review-v15.md).
+
+The hosted API was verified after publication: health and an empty real leaderboard return HTTP 200 with the GitHub origin allowed; registration without consent is rejected, confirmed registration and challenge issuance work, an early score is rejected, and the disposable test profile is removed. No production leaderboard entries are seeded.

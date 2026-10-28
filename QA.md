@@ -124,3 +124,15 @@ Source commit `d4539f9` passed all CI steps and deployed successfully in [run 40
 The live 30-second CS2 attempt also reached its result screen with the captured hit and quality. Completed screens hide the inactive Pause and gameplay footer controls; Exit and result actions remain available.
 
 [Live full-viewport gameplay capture](docs/mytrainer-live-v14.jpg), recorded after the deployed preflight and a single AK-47 tap (30 → 29). This image shows the compatibility renderer.
+
+## October 27, 2026 — Original design, input rebuild and public leaderboard
+
+Version 1.5 restores the original graphite/coral dashboard and cards while reducing instructional text and in-game cues. New profiles default to dark mode; light mode and saved customization remain available. Mouse, trackpad and touch are selected during first-run setup together with Tap/Hold triggering, game and aim speed. Public username confirmation is mandatory before registration.
+
+The [five pre-publication review passes](docs/review-v15.md) record implementation, findings and corrections. All **94 checks** pass: four movement, 15 weapon, seven round-rule, seven geometry, 49 application/controller, six API/database and six setup/loading checks. Syntax and the graphics build pass. The API tests apply the real generated migrations to a separate SQLite database; no production leaderboard data is seeded.
+
+Browser checks verified AK-47 Tap presses spending exactly one round on desktop, portrait touch and landscape touch; a trackpad drag changed yaw without spending an extra round. A corrected 30-second precision benchmark produced ten measured trials and was accepted by the local API. Model preparation is completed before scoring starts. Native fullscreen was not granted in the review browser; full-viewport fallback was verified. Physical mouse capture, physical trackpad hardware and simultaneous physical multi-touch remain verification limits.
+
+The public composite averages recent fixed-level quality across eight mechanical skills with missing skills at zero. A minimum of three skills is required to appear, with separate game/device boards. Device ownership, elapsed server time, measurement validation and replay protection are enforced. Results remain unverified browser metrics, not a validated competitive rank or anti-cheat protected tournament.
+
+New contexts use `world3d5`. The original private Site is preserved; a separate Sites Worker/D1 API supplies the GitHub Pages leaderboard. Private session history stays on the device and prior contexts remain archived/exportable.

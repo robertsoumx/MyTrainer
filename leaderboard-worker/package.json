@@ -1,0 +1,1 @@
+{"name":"mytrainer-leaderboard","version":"1.0.0","private":true,"type":"module","scripts":{"db:generate":"drizzle-kit generate","build":"node scripts/build.mjs","test":"node --test tests/api.mjs"},"devDependencies":{"drizzle-kit":"0.31.10","drizzle-orm":"0.45.2"}}

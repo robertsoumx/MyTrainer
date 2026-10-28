@@ -3,37 +3,43 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
-  workflow_run:
-    workflows: ["pages build and deployment"]
-    types: [completed]
-    branches: [main]
 permissions:
   contents: read
+  actions: read
   pages: write
   id-token: write
 concurrency:
   group: mytrainer-pages
   cancel-in-progress: false
 jobs:
-  publishing-mode:
+  publishing-order:
     runs-on: ubuntu-latest
-    outputs:
-      publish: ${{ steps.mode.outputs.publish }}
+    timeout-minutes: 12
     steps:
-      - name: Select the final Pages publisher
-        id: mode
+      - name: Wait for the default Pages publisher
         uses: actions/github-script@v7
         with:
           script: |
             const { data } = await github.rest.repos.getPages(context.repo);
-            // Branch publishing also launches GitHub's root/Jekyll build.
-            // Wait for that workflow to complete before publishing dist/.
-            const waitForLegacy = context.eventName === 'push' && data.build_type === 'legacy';
-            core.setOutput('publish', String(!waitForLegacy));
-            core.info(waitForLegacy ? 'The application will publish after the default Pages build.' : 'Publishing the compiled application.');
+            if (data.build_type !== 'legacy') return;
+            // Dynamic Pages workflows do not emit workflow_run here.
+            // Wait explicitly, so a root/Jekyll build cannot overwrite dist/.
+            for (let attempt = 0; attempt < 120; attempt++) {
+              const { data: runs } = await github.rest.actions.listWorkflowRunsForRepo({
+                ...context.repo, head_sha: context.sha, per_page: 100
+              });
+              const legacy = runs.workflow_runs.find(run => run.name === 'pages build and deployment');
+              if (legacy?.status === 'completed') {
+                core.info(`Default Pages build finished (${legacy.conclusion}); publishing the application next.`);
+                return;
+              }
+              if (context.eventName === 'workflow_dispatch' && !legacy) return;
+              if (attempt % 6 === 0) core.info('Waiting for the default Pages build for this commit.');
+              await new Promise(resolve => setTimeout(resolve, 5000));
+            }
+            throw new Error('The default Pages publisher did not finish within ten minutes. Rerun after it completes.');
   build:
-    needs: publishing-mode
-    if: needs.publishing-mode.outputs.publish == 'true'
+    needs: publishing-order
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

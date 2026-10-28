@@ -49,3 +49,5 @@
 
 .profile .avatar,.profile small,.mini-profile,.breadcrumb b,.nav-item>small,.footer,.footer .text-link{font-size:11px;letter-spacing:0}.footer{color:var(--muted)}#modal{border:0}.nav-item{font-size:13px}.range-toolbar #run-state{font-size:11px}.renderer-status{font-size:11px}
 @media(max-width:700px){.nav-item>span{font-size:11px}.range-panel .renderer-status{font-size:11px}.range-toolbar #run-state{font-size:11px}.footer{gap:12px}.footer .text-link{font-size:11px}}
+
+.range-panel:has(.result-screen) .range-toolbar [data-action="pause-session"],.range-panel:has(.result-screen) .range-bottom{display:none}

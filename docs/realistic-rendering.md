@@ -1,3 +1,5 @@
+> Historical 3D implementation. The current v1.6 release uses the flat range described in [2d-controls.md](2d-controls.md).
+
 # Rendering and weapon presentation
 
 Historical version 1.4 renderer reference. Version 1.5 uses the lightweight world path and prepares/caches the viewmodel before timing; see [the current review](review-v15.md).

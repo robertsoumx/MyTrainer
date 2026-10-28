@@ -136,3 +136,7 @@ Browser checks verified AK-47 Tap presses spending exactly one round on desktop,
 The public composite averages recent fixed-level quality across eight mechanical skills with missing skills at zero. A minimum of three skills is required to appear, with separate game/device boards. Device ownership, elapsed server time, measurement validation and replay protection are enforced. Results remain unverified browser metrics, not a validated competitive rank or anti-cheat protected tournament.
 
 New contexts use `world3d5`. The original private Site is preserved; a separate Sites Worker/D1 API supplies the GitHub Pages leaderboard. Private session history stays on the device and prior contexts remain archived/exportable.
+
+## 1.6 · 2D return · October 28, 2026
+
+See docs/review-v16.md for the five pre-publication review passes. All 102 automated checks and the static build pass. Direct pointer aim, one-round taps, touch controls, tactical-board movement, full timed saving and separate 2D leaderboard storage were verified. Light numbered-target contrast was corrected to 4.653:1 after independent review.

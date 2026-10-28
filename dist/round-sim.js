@@ -18,11 +18,11 @@
   finish(won,reason){if(this.finished)return;this.finished=true;this.won=won;this.reason=reason;this.events.push({type:'finish'});}
   recover(reason){this.transition('recover');this.setTargets([...this.targets.filter(x=>x.id!=='contact'),{id:'recovery',x:5,z:-5}]);this.notice=reason;}
   signal(visible){if(this.finished||this.id!=='anchor'||this.stage!=='hold')return;this.judge('call','communication',visible,'Report contact',visible?'You reported a defender while it was visible.':'The call was not supported by a visible defender.');this.called=visible;}
-  shot({hit=false,killed=false,targetId,settled=false}={}){
+  shot({hit=false,killed=false,targetId,killedIds=[],settled=false}={}){
    if(this.finished)return;
    const m=this.metrics.stopfire||(this.metrics.stopfire={success:0,trials:0});m.trials++;m.success+=Number(hit&&settled);
    if(this.id==='entry'&&['support','advance'].includes(this.stage)){this.judge('trade','trading',false,'Trade timing','You fired before your teammate made contact. A second defender joined the fight.');this.recover('Early shot · clear the second defender.');}
-   if(killed){this.targets=this.targets.filter(x=>x.id!==targetId);if(this.id==='entry'&&this.stage==='trade'){this.judge('trade','trading',this.time-this.stageAt<=2,'Trade timing',`You answered contact in ${(this.time-this.stageAt).toFixed(1)}s.`);}
+   if(killed){const ids=new Set(killedIds.length?killedIds:[targetId]);this.targets=this.targets.filter(x=>!ids.has(x.id));if(this.id==='entry'&&this.stage==='trade'){this.judge('trade','trading',this.time-this.stageAt<=2,'Trade timing',`You answered contact in ${(this.time-this.stageAt).toFixed(1)}s.`);}
     if(!this.targets.length){if(this.id==='retake'){this.judge('clear','positioning',true,'Clear before committing','Both defenders were cleared before the defuse.');this.transition('defuse');}else if(this.id==='entry'){this.finish(true,'Site cleared.');}else if(this.stage==='fight'||this.stage==='recover'){this.finish(true,'Rotation recovered and site cleared.');}}
    }
   }
@@ -49,7 +49,7 @@
    }
   }
   objectiveText(){const text={clear:'Clear both defenders',defuse:'Reach the objective · hold Use',support:'Move to the support marker',advance:'Hold fire · teammate advancing',trade:'Contact! Eliminate the defender',hold:'Hold this area · Call visible contact',rotate:'Objective confirmed at B · use the route marker',fight:'Clear the defender at B',recover:'Recover · clear the remaining defenders'};return text[this.stage]||'Round complete';}
-  result(){return {won:this.won,reason:this.reason,duration:this.time,review:this.review,metrics:this.metrics,engine:'round3d-v1'};}
+  result(){return {won:this.won,reason:this.reason,duration:this.time,review:this.review,metrics:this.metrics,engine:'round2d-v1'};}
  }
  const api={packs,RoundSimulation,distance};if(typeof module!=='undefined'&&module.exports)module.exports=api;else root.RoundRules=api;
 })(typeof window!=='undefined'?window:globalThis);

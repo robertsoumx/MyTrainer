@@ -1,3 +1,5 @@
+> Historical 3D implementation. The current v1.6 release uses the flat range described in [2d-controls.md](2d-controls.md).
+
 # 3D map and controls
 
 Version 1.5 defaults to **Tap** (one trigger event per press; burst modes keep their burst). Choose **Hold** for automatic fire. Opening a drill shows a full-screen brief; model preparation completes before timing starts. The detailed v1.4 reference below is historical where it differs.

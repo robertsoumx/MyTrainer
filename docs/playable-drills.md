@@ -1,3 +1,5 @@
+> Historical 3D implementation. The current v1.6 release uses the flat range described in [2d-controls.md](2d-controls.md).
+
 # Playable drills — version 1.4
 
 Historical version 1.4 guide treatments. Version 1.5 removes most labels and uses concise preflight instructions; see [the current review](review-v15.md).

@@ -1,6 +1,12 @@
 import {createServer} from 'node:http';import {readFile,stat,mkdir} from 'node:fs/promises';import {readFileSync,readdirSync} from 'node:fs';import {DatabaseSync} from 'node:sqlite';import {resolve,extname} from 'node:path';import worker from '../leaderboard-worker/worker/index.js';
 const args=process.argv,port=Number(args[args.indexOf('--port')+1])||4173;await mkdir('.openai',{recursive:true});const db=new DatabaseSync('.openai/local-board.sqlite');
-if(!db.prepare("SELECT name FROM sqlite_master WHERE name='players'").get()){for(const f of readdirSync('leaderboard-worker/drizzle').filter(x=>x.endsWith('.sql')))db.exec(readFileSync('leaderboard-worker/drizzle/'+f,'utf8'));}
+db.exec('CREATE TABLE IF NOT EXISTS _dev_migrations (name TEXT PRIMARY KEY)');
+for(const f of readdirSync('leaderboard-worker/drizzle').filter(x=>x.endsWith('.sql')).sort()){
+ if(db.prepare('SELECT name FROM _dev_migrations WHERE name=?').get(f))continue;
+ const legacy=f.startsWith('0000_')&&db.prepare("SELECT name FROM sqlite_master WHERE name='players'").get();
+ if(!legacy)db.exec(readFileSync('leaderboard-worker/drizzle/'+f,'utf8'));
+ db.prepare('INSERT INTO _dev_migrations VALUES (?)').run(f);
+}
 const env={DB:{prepare(sql){let values=[];return {bind(...v){values=v;return this;},async first(){return db.prepare(sql).get(...values)||null;},async all(){return {results:db.prepare(sql).all(...values)};},async run(){return db.prepare(sql).run(...values);}};},async batch(items){db.exec('BEGIN');try{const r=[];for(const s of items)r.push(await s.run());db.exec('COMMIT');return r;}catch(e){db.exec('ROLLBACK');throw e;}}}};
 const types={'.html':'text/html','.js':'application/javascript','.css':'text/css','.svg':'image/svg+xml','.png':'image/png','.jpg':'image/jpeg','.webp':'image/webp','.glb':'model/gltf-binary','.woff2':'font/woff2','.json':'application/json'};
 createServer(async(req,res)=>{try{const url=new URL(req.url,'http://'+req.headers.host);if(url.pathname.startsWith('/api/')||url.pathname==='/health'){const chunks=[];for await(const chunk of req)chunks.push(chunk);const body=Buffer.concat(chunks);const request=new Request(url,{method:req.method,headers:req.headers,...(body.length?{body}: {})});const response=await worker.fetch(request,env);res.writeHead(response.status,Object.fromEntries(response.headers));res.end(Buffer.from(await response.arrayBuffer()));return;}

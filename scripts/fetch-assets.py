@@ -4,9 +4,12 @@ import hashlib
 import json
 import pathlib
 import urllib.request
+import sys
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 MANIFEST = json.loads((ROOT / 'scripts/asset-downloads.json').read_text())
+if '--2d' in sys.argv:
+    MANIFEST = [item for item in MANIFEST if '/models/' not in item['path'] and '/textures/' not in item['path']]
 
 def restore(item):
     destination = ROOT / item['path']

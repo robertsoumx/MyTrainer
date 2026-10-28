@@ -1,39 +1,44 @@
 # MyTrainer / Stratum
 
-[Open the app](https://robertsoumx.github.io/MyTrainer/). Version 1.5 restores the original graphite/coral dashboard and drill cards, with a quieter playing view and shorter instructions.
+CS2 and VALORANT practice at https://robertsoumx.github.io/MyTrainer/.
+
+Version 1.6 restores a flat **2D target range**. The original graphite/coral dashboard, optional light theme, settings, progress and shared leaderboard remain.
 
 ## Practice
 
-Sixteen skills cover aim, mechanics, tactical judgment and team play. Eight mechanical drills use a light 2.5D rendering of connected 3D maps, with a visible licensed weapon model. Three branching rounds grade movement, shots, calls and objective use. The eight standalone tactical modules use decisions.
+- Move the mouse or trackpad pointer to aim. No drag, pointer lock or 3D camera is required.
+- Click or press F to fire. Tap mode fires on a press; Hold mode follows the weapon's automatic cadence. Semi-automatic and explicit burst modes keep their own behavior.
+- Touch: drag to aim, tap a target, or use the separate Fire button. Movement drills and rounds expose a movement stick.
+- R reloads; right click / Alt fire changes the weapon's supported alternate mode. Free practice allows live weapon switching.
+- Every drill opens a short brief, then fills the viewport. Native fullscreen is requested on a user action; the full-viewport layout remains available when the browser declines it.
 
-On first use, choose a public username, game, device, trigger behavior, aim speed and theme. Explicitly confirm the username and benchmark scores will be public. The app remembers this setup. Private practice history remains on the device; the public profile is linked to that browser. Customize includes profile removal and private-history backup/import.
+Eight mechanical drills use flat circular targets: precision, flicks, tracking, ordered transitions, placement, stop-fire, recovery cadence and controlled exposure. They differ through target behavior and scoring. Three action-based rounds use a flat tactical board: move, aim, fire, call contact and use the objective. Eight standalone tactical skills use six decisions per drill.
 
-Opening a drill fills the viewport and shows one instruction before Start. The browser's native fullscreen is requested on user activation; the fixed full-viewport layout remains available if it declines. Mouse capture, trackpad drag-look and touch controls are supported. Esc, focus loss and hidden tabs pause play. Touch uses separate movement, look and Fire zones.
+There are no humanoid models, block scenery, viewmodels or 3D rendering dependencies in the active page. Historical renderer source remains in the repository for reference. Its geometry tests do not imply that the 2D release uses that renderer.
 
-**Tap** fires one trigger event per press, even if held. **Hold** repeats at the selected automatic weapon's rate; semi-automatic and burst modes keep their weapon behavior. Keyboard and pointer inputs have separate ownership. Recoil changes the ballistic/crosshair offset without pitching the camera. A single small viewmodel impulse returns monotonically. Movement uses bounded substeps and independent acceleration/braking profiles. The trainer does not embed either game's engine or claim exact native physics.
+## Results
 
-Weapon preparation completes before the scored clock starts. Up to four viewmodel poses are cached. The world avoids the expensive perspective-texture subdivision path during play. Exposure deadlines use active real time, and tracking does not manufacture repeated samples from one delayed frame. New mechanical results use `world3d5`; earlier data stays archived and exportable.
+First use asks for controls, appearance, a public username and explicit public-score confirmation. Private history remains in local storage and can be exported. A public profile is owned by its browser's device key; it is not an email/password account.
 
-## Public leaderboard
+A fixed benchmark is level 3 and 30 seconds. Adaptive sessions use levels 1–8. New mechanical contexts are `range2d1:<weapon>`; round evidence uses `round2d1:<weapon>`. Earlier 3D records stay in the backup and archive, separate from current baselines.
 
-The leaderboard is shared through a separate Worker API and D1 database, not local storage. It refreshes every 30 seconds and on demand. No players or scores are seeded.
+The public leaderboard uses a durable API, not a local mock. The 0–1000 composite averages the latest three accepted benchmarks for each of eight skills, with missing skills counting zero; complete three skills to appear. Games and mouse/trackpad/touch boards are separate. New 2D attempts use protocol `2d1`; old `v5` scores remain separate. The server binds results to timed, single-use attempts and validates measurements. Browser scores remain unverified and are not official game ranks.
 
-For each of eight mechanical skills, average the latest three accepted **level 3, 30-second** benchmark quality values. Missing skills count as zero. The composite is the sum of those eight values divided by eight, multiplied by ten: **0–1000**. A player appears after three skills. CS2 and VALORANT, and mouse, trackpad and touch, each have separate boards. Public attempts use the default AK-47 / Vandal and 64° vertical FOV. Adaptive drills and imported results do not enter the board.
+The live API is https://mytrainer-public-board.qiuchitching.chatgpt.site. Its source is mirrored in `leaderboard-worker/`.
 
-The server issues timed, single-use attempts, validates measurements, checks device ownership and calculates composites itself. Results remain **unverified browser benchmarks**; these checks are not anti-cheat or a game-rank estimator. Usernames are case-insensitively unique. Public profiles can be removed in Customize. No email or game-account credentials are collected; device keys are stored hashed on the server.
-
-API source and migration tests are in `leaderboard-worker/`. The live API is a separate Sites deployment with `d1: "DB"`; the frontend stays on GitHub Pages. The original private Site's audience is unchanged.
-
-## Development
+## Development and publication
 
 ```sh
 npm ci
-python3 scripts/fetch-assets.py
+python3 scripts/fetch-assets.py --2d
 npm run check
 npm test
 npm run build
+npm run dev
 ```
 
-Node 22.13+ is required for the SQLite-backed API tests. The suite has **94 checks** covering movement, weapons, round rules, geometry, application inputs, first-run setup, loading order, public consent, replay protection and score calculations. `npm run dev` serves the application and the same API against a separate local SQLite database for review. Production assets are served from `dist/`; generated graphics and licensed binary models are restored/built by CI.
+The static entry is `dist/index.html`; play is implemented in `dist/range2d.js`. The 2D build verifies entry assets and skips the legacy graphics bundle. The asset restore skips models and textures. The dev server serves the static app plus a local SQLite-backed instance of the real leaderboard Worker; it applies tracked migrations without resetting existing data.
 
-The firearm snapshot contains 54 profiles represented by seven licensed model families; these are not 54 exact official meshes. Official Riot PNGs are Armory reference images. Keep [asset credits](docs/assets-sources.md), licenses and the pinned asset manifest. See [QA.md](QA.md) for the five version-1.5 review passes, and [deployment details](docs/github-pages.md).
+GitHub Actions verifies and deploys `dist/` to Pages after the default Pages publisher finishes. This preserves the existing deployment ordering. See `docs/2d-controls.md` for the interaction contract and `docs/review-v16.md` for release verification.
+
+Movement, spread and recoil recovery are independent training approximations. The range does not embed either game's engine or reproduce its native graphics. Use the in-game follow-through for transfer practice. No game credentials or official-rank estimates are requested.

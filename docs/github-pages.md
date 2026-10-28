@@ -37,10 +37,15 @@ Serve `dist/` with a static HTTP server for preview. Rebuild after graphics-sour
 
 ## Move an existing profile
 
-On the previous host, use **Customize → Export backup** before changing hosts. On the new Pages URL, use **Import backup** and confirm replacement. Profiles are stored in browser local storage, which is separate for the new host; the repository and Pages workflow do not copy them. Older results remain archived under their original contexts, while version 1.5.0 mechanical practice establishes `:world3d4:<weapon-id>` baselines. Playable rounds use `:round3d1:<weapon-id>` and stay separate from full-skill baselines.
+On the previous host, use **Customize → Export backup** before changing hosts. On the new Pages URL, use **Import backup** and confirm replacement. Profiles are stored in browser local storage, which is separate for the new host; the repository and Pages workflow do not copy them. Older results remain archived under their original contexts, while version 1.6.0 mechanical practice establishes `:range2d1:<weapon-id>` baselines. Playable rounds use `:round2d1:<weapon-id>` and stay separate from full-skill baselines.
 
 ## Shared leaderboard
 
 The Pages frontend calls a separate public Worker/D1 API. Its deployment manifest uses the documented `d1: "DB"` binding; generated Drizzle migrations are packaged with the Worker. API source and migration tests are retained under `leaderboard-worker/` in MyTrainer. Private session backups do not contain the public profile device credential. The public profile is tied to its browser; remove it in Customize before discarding that profile. See [version 1.5 review](review-v15.md).
 
 The hosted API was verified after publication: health and an empty real leaderboard return HTTP 200 with the GitHub origin allowed; registration without consent is rejected, confirmed registration and challenge issuance work, an early score is rejected, and the disposable test profile is removed. No production leaderboard entries are seeded.
+
+
+## 2D release · 1.6
+
+The frontend loads `range2d.js`; the old graphics bundle is not loaded or rebuilt. Asset restoration uses `--2d` to skip 3D models and textures. The API supports separate `2d1` and legacy `v5` protocols through an additive migration, preserving existing names and results. The Pages workflow and public URLs are unchanged.

@@ -51,3 +51,4 @@ body.drill-playing{overflow:hidden}.drill-preflight{position:fixed;inset:0;z-ind
 .settings-fold>summary{font-size:20px;font-weight:600;cursor:pointer;min-height:36px}.settings-fold[open]>summary{margin-bottom:20px}.form-stack>label>small{font-size:11px}.settings-grid .cross-preview{height:130px}.settings-grid section h2{margin-bottom:18px}@media(max-height:500px) and (orientation:landscape){.mobile-game{display:block}.mobile-game select{min-height:36px;font-size:12px}}
 
 .range-loading{position:absolute;inset:0;display:grid;place-items:center;background:#151b1df2;color:#edf0e7;font-size:16px;z-index:5}
+html[data-theme=light] .form-error{color:#97351f}

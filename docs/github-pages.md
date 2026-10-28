@@ -2,7 +2,7 @@
 
 Updated October 27, 2026 for version 1.5.0. Source: [robertsoumx/MyTrainer](https://github.com/robertsoumx/MyTrainer). The application retains the Stratum name.
 
-**Application deployed:** [Open MyTrainer](https://robertsoumx.github.io/MyTrainer/). The prior version 1.4 source commit `d4539f9` passed all build steps and deployed in [Actions run 40543905439](https://github.com/robertsoumx/MyTrainer/actions/runs/40543905439). The application is published from the compiled `dist/` artifact.
+**Application deployed:** [Open MyTrainer](https://robertsoumx.github.io/MyTrainer/). Version 1.5 source commit `ff1e3b8` passed all 94 checks, built and deployed successfully in [Actions run 40631724182](https://github.com/robertsoumx/MyTrainer/actions/runs/40631724182). The separately published Worker/D1 API supplies shared leaderboard records.
 
 The repository also has GitHub's default branch/Jekyll publisher enabled. To avoid competing final deployments, the app workflow checks the current Pages mode. In branch mode, the workflow waits for **pages build and deployment** on the same commit to finish, then builds and publishes the application. The default dynamic workflow does not emit a usable `workflow_run` completion event here, so the order is checked directly through the Actions API. In Actions mode, pushes publish directly. Manual dispatch remains available. The workflow only reads Pages configuration; it does not change repository settings or require extra credentials.
 

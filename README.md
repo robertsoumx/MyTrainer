@@ -1,44 +1,43 @@
 # MyTrainer / Stratum
 
-CS2 and VALORANT practice at https://robertsoumx.github.io/MyTrainer/.
+CS2 and VALORANT practice: https://robertsoumx.github.io/MyTrainer/.
 
-Version 1.6 restores a flat **2D target range**. The original graphite/coral dashboard, optional light theme, settings, progress and shared leaderboard remain.
+Version 1.7 restores the conventional first-person aim-trainer experience: a fixed center crosshair, mouse-look, shaded sphere targets, a textured training room, and detailed weapon-family viewmodels. The existing graphite/coral dashboard, optional light theme, first-run profile, progress and public leaderboard remain.
 
-## Practice
+## Existing components used
 
-- Move the mouse or trackpad pointer to aim. No drag, pointer lock or 3D camera is required.
-- Click or press F to fire. Tap mode fires on a press; Hold mode follows the weapon's automatic cadence. Semi-automatic and explicit burst modes keep their own behavior.
-- Touch: drag to aim, tap a target, or use the separate Fire button. Movement drills and rounds expose a movement stick.
-- R reloads; right click / Alt fire changes the weapon's supported alternate mode. Free practice allows live weapon switching.
-- Every drill opens a short brief, then fills the viewport. Native fullscreen is requested on a user action; the full-viewport layout remains available when the browser declines it.
+- Three.js 0.180.0 and its actual PointerLockControls for captured mouse-look.
+- Rapier 0.21.0 WASM and its maintained kinematic character controller for capsule collision, ground contact, wall sliding, jumping and gravity. Rapier ray queries resolve targets and occluding cover in world space.
+- Non-overlapping target spawning adapted from Freddy Saez’s MIT [threejs-aim-trainer](https://github.com/freddysae0/threejs-aim-trainer), pinned to e28148a4de56809a1c0a6fbb7b3f6492fc85e3cb. The original algorithm and complete license are retained under third_party/.
+- Existing licensed GLB weapon models and CC0 PBR surface textures; complete attribution remains in dist/assets/credits.json. Additional engine/trainer notices are in dist/assets/engine-licenses.txt.
 
-Eight mechanical drills use flat circular targets: precision, flicks, tracking, ordered transitions, placement, stop-fire, recovery cadence and controlled exposure. They differ through target behavior and scoring. Three action-based rounds use a flat tactical board: move, aim, fire, call contact and use the objective. Eight standalone tactical skills use six decisions per drill.
+## Controls
 
-There are no humanoid models, block scenery, viewmodels or 3D rendering dependencies in the active page. Historical renderer source remains in the repository for reference. Its geometry tests do not imply that the 2D release uses that renderer.
+Mouse movement rotates the viewpoint; the crosshair stays centered. Click or F fires. Tap responds to one press; Hold follows the selected weapon’s automatic cadence. Semi-auto, explicit burst, reload and alternate fire retain their profiles. Fire does not add camera recoil or a second view kick. If mouse capture is declined, unpressed pointer movement still rotates the view; Capture mouse retries capture. Touch drags rotate the view, with separate Fire and movement controls.
 
-## Results
+WASD moves; Space jumps; Ctrl crouches; R reloads; right click / Alt fire changes supported alternate modes. Free practice supports live weapon switching. A short brief precedes every drill. The range fills the viewport and requests native fullscreen from a user action.
 
-First use asks for controls, appearance, a public username and explicit public-score confirmation. Private history remains in local storage and can be exported. A public profile is owned by its browser's device key; it is not an email/password account.
+The scored timer starts after the physics and weapon model finish loading. Graphics/asset failures show an actionable error and do not start a scored attempt. The range requires WebGL 2; it never silently falls back to the rejected 2D dot field.
 
-A fixed benchmark is level 3 and 30 seconds. Adaptive sessions use levels 1–8. New mechanical contexts are `range2d1:<weapon>`; round evidence uses `round2d1:<weapon>`. Earlier 3D records stay in the backup and archive, separate from current baselines.
+## Scores
 
-The public leaderboard uses a durable API, not a local mock. The 0–1000 composite averages the latest three accepted benchmarks for each of eight skills, with missing skills counting zero; complete three skills to appear. Games and mouse/trackpad/touch boards are separate. New 2D attempts use protocol `2d1`; old `v5` scores remain separate. The server binds results to timed, single-use attempts and validates measurements. Browser scores remain unverified and are not official game ranks.
+Eight mechanical drills, eight tactical decision skills, and three operated rounds retain the adaptive training structure. New full-drill contexts use fpsnative1 and rounds use roundfps1. Earlier contexts remain preserved in backups. Public standard benchmarks use a separate fps1 protocol; old v5 and 2d1 composites remain separate.
 
-The live API is https://mytrainer-public-board.qiuchitching.chatgpt.site. Its source is mirrored in `leaderboard-worker/`.
+The durable public API at https://mytrainer-public-board.qiuchitching.chatgpt.site validates server-timed, single-use benchmark attempts. The composite remains 0–1000: average the latest three accepted level-3 benchmarks per eight skills, counting missing skills as zero. Three skills are needed to appear. Games and mouse/trackpad/touch boards are separate. Default weapon and 64° FOV are required. Browser results remain unverified and do not imply official game ranks.
 
-## Development and publication
+Private history stays in this browser and can be exported. Public names and benchmarks require explicit confirmation. The profile is owned by its browser device key.
+
+## Development
 
 ```sh
 npm ci
-python3 scripts/fetch-assets.py --2d
+python3 scripts/fetch-assets.py
 npm run check
 npm test
 npm run build
 npm run dev
 ```
 
-The static entry is `dist/index.html`; play is implemented in `dist/range2d.js`. The 2D build verifies entry assets and skips the legacy graphics bundle. The asset restore skips models and textures. The dev server serves the static app plus a local SQLite-backed instance of the real leaderboard Worker; it applies tracked migrations without resetting existing data.
+The entry is dist/index.html. src/fps-engine.js bundles Three.js and the Rapier WASM runtime into dist/fps-engine.js; dist/range-fps.js integrates the drills, firing and UI. src/fps-physics.mjs is also exercised directly in Node using the real engine. The local API uses SQLite and the same Worker source as production. GitHub Actions builds and publishes dist/ to Pages.
 
-GitHub Actions verifies and deploys `dist/` to Pages after the default Pages publisher finishes. This preserves the existing deployment ordering. See `docs/2d-controls.md` for the interaction contract and `docs/review-v16.md` for release verification.
-
-Movement, spread and recoil recovery are independent training approximations. The range does not embed either game's engine or reproduce its native graphics. Use the in-game follow-through for transfer practice. No game credentials or official-rank estimates are requested.
+Movement tuning and recoil are trainer profiles, not a reproduction of native CS2/VALORANT internals. See docs/fps-controls.md and docs/review-v17.md for behavior and verification boundaries.

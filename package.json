@@ -1,15 +1,16 @@
 {
   "name": "stratum-tactical-performance-lab",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "private": true,
   "description": "Adaptive browser practice for CS2 and VALORANT, with transparent measurement boundaries.",
   "scripts": {
-    "test": "node tests/movement.cjs && node tests/weapons.cjs && node tests/rounds.cjs && node tests/world3d.cjs && node tests/verify.cjs && node --test leaderboard-worker/tests/api.mjs && node --test tests/setup.cjs",
-    "check": "node --check dist/core.js && node --check dist/content.js && node --check dist/weapon-data.js && node --check dist/weapon-sim.js && node --check dist/compat-weapon.js && node --check dist/world3d.js && node --check dist/movement.js && node --check dist/drill-guides.js && node --check dist/round-sim.js && node --check dist/range2d.js && node --check dist/leaderboard.js && node --check dist/app.js",
-    "build": "node scripts/build-2d.mjs",
+    "test": "node tests/movement.cjs && node tests/weapons.cjs && node tests/rounds.cjs && node tests/progress.cjs && node --test tests/fps-resources.mjs tests/fps-physics.mjs tests/fps-controller.cjs leaderboard-worker/tests/api.mjs tests/setup.cjs",
+    "check": "node --check dist/core.js && node --check dist/content.js && node --check dist/weapon-data.js && node --check dist/weapon-sim.js && node --check dist/compat-weapon.js && node --check dist/world3d.js && node --check dist/movement.js && node --check dist/drill-guides.js && node --check dist/round-sim.js && node --check dist/range-fps.js && node --check dist/leaderboard.js && node --check dist/app.js",
+    "build": "node scripts/build-fps.mjs",
     "dev": "node scripts/dev.mjs"
   },
   "devDependencies": {
+    "@dimforge/rapier3d-compat": "0.21.0",
     "esbuild": "^0.25.11",
     "jsdom": "30.1.1",
     "three": "^0.180.0"

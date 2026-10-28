@@ -1,4 +1,4 @@
-const PROTOCOLS=['v5','2d1'];
+const PROTOCOLS=['v5','2d1','fps1'];
 const SKILLS=['precision','flick','tracking','switching','placement','stopfire','burst','peek'];
 const ORIGINS=new Set(['https://robertsoumx.github.io','http://terminal.local:4173','http://localhost:4173']);
 const hex=buffer=>[...new Uint8Array(buffer)].map(x=>x.toString(16).padStart(2,'0')).join('');
@@ -13,7 +13,7 @@ export default {async fetch(request,env){const url=new URL(request.url),origin=r
  try{
   if(origin&&!allowed)return respond({error:'This origin is not allowed.'},403);
   if(request.method==='OPTIONS')return new Response(null,{status:204,headers:{...cors,'Access-Control-Max-Age':'600'}});
-  if(url.pathname==='/health')return respond({ok:true,protocol:'2d1',protocols:PROTOCOLS,database:!!env.DB});
+  if(url.pathname==='/health')return respond({ok:true,protocol:'fps1',protocols:PROTOCOLS,database:!!env.DB});
   if(url.pathname==='/')return new Response('MyTrainer public leaderboard API. Browser benchmark results are unverified.',{headers:{'Content-Type':'text/plain','Cache-Control':'no-store',...cors}});
   if(!env.DB)fail('Leaderboard storage is unavailable. Try again later.',503);
   if(request.method==='GET'&&url.pathname==='/api/leaderboard'){

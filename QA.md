@@ -140,3 +140,7 @@ New contexts use `world3d5`. The original private Site is preserved; a separate 
 ## 1.6 · 2D return · October 28, 2026
 
 See docs/review-v16.md for the five pre-publication review passes. All 102 automated checks and the static build pass. Direct pointer aim, one-round taps, touch controls, tactical-board movement, full timed saving and separate 2D leaderboard storage were verified. Light numbered-target contrast was corrected to 4.653:1 after independent review.
+
+## 1.7 · first-person engine replacement · October 28, 2026
+
+See docs/review-v17.md. Current validation uses 72 checks including real Rapier WASM collisions and actual Three.js mouse-look. Target spawning is adapted from a pinned MIT aim trainer; permissions and notices are retained. WebGL visual QA is blocked by the review browser’s explicitly disabled graphics context. This is recorded as unverified rather than substituting a rudimentary renderer. Five review passes covered sources, controls, physics, states and score compatibility.

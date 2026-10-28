@@ -49,7 +49,7 @@
    }
   }
   objectiveText(){const text={clear:'Clear both defenders',defuse:'Reach the objective · hold Use',support:'Move to the support marker',advance:'Hold fire · teammate advancing',trade:'Contact! Eliminate the defender',hold:'Hold this area · Call visible contact',rotate:'Objective confirmed at B · use the route marker',fight:'Clear the defender at B',recover:'Recover · clear the remaining defenders'};return text[this.stage]||'Round complete';}
-  result(){return {won:this.won,reason:this.reason,duration:this.time,review:this.review,metrics:this.metrics,engine:'round2d-v1'};}
+  result(){return {won:this.won,reason:this.reason,duration:this.time,review:this.review,metrics:this.metrics,engine:'roundfps-v1'};}
  }
  const api={packs,RoundSimulation,distance};if(typeof module!=='undefined'&&module.exports)module.exports=api;else root.RoundRules=api;
 })(typeof window!=='undefined'?window:globalThis);

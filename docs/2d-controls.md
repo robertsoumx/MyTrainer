@@ -1,3 +1,5 @@
+> Historical implementation. Current v1.7 uses [fps-controls.md](fps-controls.md).
+
 # 2D control contract · v1.6
 
 The active range is Canvas 2D. Aiming is screen-space pointer positioning, with no first-person camera or pointer-lock permission. The dashboard's existing graphite/coral design is preserved.

@@ -6,3 +6,5 @@ dist/graphics.js
 dist/assets/models/
 dist/assets/textures/
 dist/assets/fonts/InterVariable.woff2
+
+dist/fps-engine.js

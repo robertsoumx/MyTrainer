@@ -1,3 +1,5 @@
+> Historical implementation. Current v1.7 uses [fps-controls.md](fps-controls.md).
+
 > Historical 3D implementation. The current v1.6 release uses the flat range described in [2d-controls.md](2d-controls.md).
 
 # Playable drills — version 1.4

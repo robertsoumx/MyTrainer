@@ -672,5 +672,26 @@
       "sha256": "693b77d4f32ee9b8bfc995589b5fad5e99adf2832738661f5402f9978429a8e3",
       "modifications": "None; original official WOFF2 copied without subsetting or re-encoding."
     }
+  ],
+  "engines": [
+    {
+      "name": "Three.js",
+      "version": "0.180.0",
+      "license": "MIT",
+      "url": "https://github.com/mrdoob/three.js"
+    },
+    {
+      "name": "Rapier",
+      "version": "0.21.0",
+      "license": "Apache-2.0",
+      "url": "https://github.com/dimforge/rapier.js"
+    },
+    {
+      "name": "threejs-aim-trainer target generation adaptation",
+      "revision": "e28148a4de56809a1c0a6fbb7b3f6492fc85e3cb",
+      "author": "Freddy Saez",
+      "license": "MIT",
+      "url": "https://github.com/freddysae0/threejs-aim-trainer"
+    }
   ]
 }

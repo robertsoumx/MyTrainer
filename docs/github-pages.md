@@ -1,3 +1,5 @@
+> Current release: v1.7, using the Three.js / Rapier FPS build. See [fps-controls.md](fps-controls.md) and [review-v17.md](review-v17.md). Earlier release notes below are historical.
+
 # GitHub Pages: MyTrainer
 
 Updated October 27, 2026 for version 1.5.0. Source: [robertsoumx/MyTrainer](https://github.com/robertsoumx/MyTrainer). The application retains the Stratum name.

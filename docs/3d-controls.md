@@ -2,7 +2,7 @@
 
 The mechanical drills take place in original navigable 3D practice maps: **Courtyard 04** for CS2 and **The Pavilion** for VALORANT. Move your player through the map and rotate the camera to aim the centered crosshair. Targets have world positions; walls and bodies can block shots. The Pavilion has open target lanes and a dedicated teal HUD with an elimination panel; Courtyard 04 retains its courtyard, alley, ramp, and catwalk.
 
-In **Drills**, choose **Free practice**, then **Enter 3D map** for an untimed walk in the selected game's map. Explore does not save a score or change a baseline. Mechanical drills use the selected game’s map. Round scenarios use a connected original site with objective, support and route markers. Every scored attempt presents its instructions before Start opens the practice view.
+In **Drills**, choose **Free practice**, then **Enter free practice** for an untimed walk in the selected game's map. Explore does not save a score or change a baseline. Mechanical drills use the selected game’s map. Round scenarios use a connected original site with objective, support and route markers. Every scored attempt presents its instructions before Start opens the practice view.
 
 ## Mouse and keyboard
 

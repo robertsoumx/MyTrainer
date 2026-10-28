@@ -2,7 +2,7 @@
 
 A static tactical performance lab for Counter-Strike 2 and VALORANT. The application is branded Stratum; its GitHub Pages source target is [robertsoumx/MyTrainer](https://github.com/robertsoumx/MyTrainer). Serve the generated `dist/` directory over HTTPS. No API keys or game-account access are required. The graphics library, licensed models, textures, and selector images are local at runtime.
 
-Source is maintained in [MyTrainer](https://github.com/robertsoumx/MyTrainer). The build publishes `dist/` through GitHub Actions. See [deployment status and setup](docs/github-pages.md).
+**Live app: [MyTrainer on GitHub Pages](https://robertsoumx.github.io/MyTrainer/).** Source is maintained in [MyTrainer](https://github.com/robertsoumx/MyTrainer). The build publishes `dist/` through GitHub Actions. See [deployment status and setup](docs/github-pages.md).
 
 ## Experience
 
@@ -57,6 +57,6 @@ Version **1.4.0**. Use Node 20.19+ or Node 22.12+; install locked development de
 
 `scripts/fetch-assets.py` restores **23 pinned files** from GitHub revisions in `scripts/asset-downloads.json`: 21 model/material/arm-texture files plus the Inter variable font and its OFL license. It verifies SHA-256 hashes and reuses matching local files. All 21 original model/texture remote payload hashes were verified for this migration; the browser font check also confirmed Inter loaded. The official catalog PNGs are committed source assets. `npm run build` bundles `src/realistic-renderer.js` and its graphics dependencies into generated `dist/graphics.js`; rerun it after graphics-source changes. Other application modules are served directly from `dist/`.
 
-`.github/workflows/pages.yml` runs on pushes to `main` or manual dispatch: it installs dependencies, restores assets, checks syntax, runs tests, builds graphics, uploads `dist/`, and deploys with GitHub Pages. The repository must use **Settings → Pages → Build and deployment → Source → GitHub Actions**. Workflow preparation is not evidence of a successful hosted deployment. See [GitHub Pages setup](docs/github-pages.md).
+`.github/workflows/pages.yml` runs on pushes to `main` or manual dispatch: it installs dependencies, restores assets, checks syntax, runs tests, builds graphics, uploads `dist/`, and deploys with GitHub Pages. It publishes directly when Pages uses **GitHub Actions**. With existing branch publishing, it waits for GitHub’s default build on the same commit before publishing the app artifact. See [GitHub Pages setup](docs/github-pages.md).
 
 See [QA.md](QA.md) for the five historical refinement passes and dated updates. The October 27 checks cover recoil timing, preflight guidance, full-viewport entry, action-based rounds, result persistence and responsive layouts. Browser visuals exercise the CPU compatibility renderer because WebGL2 was unavailable. GPU appearance, physical multi-touch, native fullscreen, device performance and live-game parity remain unverified.

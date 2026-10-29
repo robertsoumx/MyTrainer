@@ -1,0 +1,739 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-29T04:32:28Z",
+  "title": "Design System: Stratum",
+  "extensions": {
+    "colorMeta": {
+      "primary": {
+        "role": "primary",
+        "displayName": "Coral Action",
+        "canonical": "#f17a59",
+        "tonalRamp": [
+          "oklch(15.00% 0.15424 36.43)",
+          "oklch(26.43% 0.15424 36.43)",
+          "oklch(37.86% 0.15424 36.43)",
+          "oklch(49.29% 0.15424 36.43)",
+          "oklch(60.71% 0.15424 36.43)",
+          "oklch(72.14% 0.15424 36.43)",
+          "oklch(83.57% 0.15424 36.43)",
+          "oklch(95.00% 0.15424 36.43)"
+        ]
+      },
+      "accent-text-fallback": {
+        "role": "primary",
+        "displayName": "Coral Text Fallback",
+        "canonical": "#ffab8b",
+        "tonalRamp": [
+          "oklch(15.00% 0.10878 41.63)",
+          "oklch(26.43% 0.10878 41.63)",
+          "oklch(37.86% 0.10878 41.63)",
+          "oklch(49.29% 0.10878 41.63)",
+          "oklch(60.71% 0.10878 41.63)",
+          "oklch(72.14% 0.10878 41.63)",
+          "oklch(83.57% 0.10878 41.63)",
+          "oklch(95.00% 0.10878 41.63)"
+        ]
+      },
+      "accent-ink": {
+        "role": "neutral",
+        "displayName": "Graphite Action Ink",
+        "canonical": "#111315",
+        "tonalRamp": [
+          "oklch(15.00% 0.00518 248.11)",
+          "oklch(26.43% 0.00518 248.11)",
+          "oklch(37.86% 0.00518 248.11)",
+          "oklch(49.29% 0.00518 248.11)",
+          "oklch(60.71% 0.00518 248.11)",
+          "oklch(72.14% 0.00518 248.11)",
+          "oklch(83.57% 0.00518 248.11)",
+          "oklch(95.00% 0.00518 248.11)"
+        ]
+      },
+      "graphite-bg": {
+        "role": "neutral",
+        "displayName": "Graphite Background",
+        "canonical": "#151719",
+        "tonalRamp": [
+          "oklch(15.00% 0.00506 248.08)",
+          "oklch(26.43% 0.00506 248.08)",
+          "oklch(37.86% 0.00506 248.08)",
+          "oklch(49.29% 0.00506 248.08)",
+          "oklch(60.71% 0.00506 248.08)",
+          "oklch(72.14% 0.00506 248.08)",
+          "oklch(83.57% 0.00506 248.08)",
+          "oklch(95.00% 0.00506 248.08)"
+        ]
+      },
+      "graphite-side": {
+        "role": "neutral",
+        "displayName": "Graphite Sidebar",
+        "canonical": "#111315",
+        "tonalRamp": [
+          "oklch(15.00% 0.00518 248.11)",
+          "oklch(26.43% 0.00518 248.11)",
+          "oklch(37.86% 0.00518 248.11)",
+          "oklch(49.29% 0.00518 248.11)",
+          "oklch(60.71% 0.00518 248.11)",
+          "oklch(72.14% 0.00518 248.11)",
+          "oklch(83.57% 0.00518 248.11)",
+          "oklch(95.00% 0.00518 248.11)"
+        ]
+      },
+      "graphite-surface": {
+        "role": "neutral",
+        "displayName": "Graphite Surface",
+        "canonical": "#1c1f22",
+        "tonalRamp": [
+          "oklch(15.00% 0.00730 248.14)",
+          "oklch(26.43% 0.00730 248.14)",
+          "oklch(37.86% 0.00730 248.14)",
+          "oklch(49.29% 0.00730 248.14)",
+          "oklch(60.71% 0.00730 248.14)",
+          "oklch(72.14% 0.00730 248.14)",
+          "oklch(83.57% 0.00730 248.14)",
+          "oklch(95.00% 0.00730 248.14)"
+        ]
+      },
+      "graphite-raised": {
+        "role": "neutral",
+        "displayName": "Graphite Raised",
+        "canonical": "#24282c",
+        "tonalRamp": [
+          "oklch(15.00% 0.00939 248.17)",
+          "oklch(26.43% 0.00939 248.17)",
+          "oklch(37.86% 0.00939 248.17)",
+          "oklch(49.29% 0.00939 248.17)",
+          "oklch(60.71% 0.00939 248.17)",
+          "oklch(72.14% 0.00939 248.17)",
+          "oklch(83.57% 0.00939 248.17)",
+          "oklch(95.00% 0.00939 248.17)"
+        ]
+      },
+      "graphite-line": {
+        "role": "neutral",
+        "displayName": "Graphite Line",
+        "canonical": "#33383e",
+        "tonalRamp": [
+          "oklch(15.00% 0.01257 252.98)",
+          "oklch(26.43% 0.01257 252.98)",
+          "oklch(37.86% 0.01257 252.98)",
+          "oklch(49.29% 0.01257 252.98)",
+          "oklch(60.71% 0.01257 252.98)",
+          "oklch(72.14% 0.01257 252.98)",
+          "oklch(83.57% 0.01257 252.98)",
+          "oklch(95.00% 0.01257 252.98)"
+        ]
+      },
+      "graphite-text": {
+        "role": "neutral",
+        "displayName": "Graphite Text",
+        "canonical": "#eeeef0",
+        "tonalRamp": [
+          "oklch(15.00% 0.00267 286.35)",
+          "oklch(26.43% 0.00267 286.35)",
+          "oklch(37.86% 0.00267 286.35)",
+          "oklch(49.29% 0.00267 286.35)",
+          "oklch(60.71% 0.00267 286.35)",
+          "oklch(72.14% 0.00267 286.35)",
+          "oklch(83.57% 0.00267 286.35)",
+          "oklch(95.00% 0.00267 286.35)"
+        ]
+      },
+      "graphite-muted": {
+        "role": "neutral",
+        "displayName": "Graphite Muted",
+        "canonical": "#a4aab2",
+        "tonalRamp": [
+          "oklch(15.00% 0.01338 255.53)",
+          "oklch(26.43% 0.01338 255.53)",
+          "oklch(37.86% 0.01338 255.53)",
+          "oklch(49.29% 0.01338 255.53)",
+          "oklch(60.71% 0.01338 255.53)",
+          "oklch(72.14% 0.01338 255.53)",
+          "oklch(83.57% 0.01338 255.53)",
+          "oklch(95.00% 0.01338 255.53)"
+        ]
+      },
+      "light-bg": {
+        "role": "neutral",
+        "displayName": "Cool Off-white Background",
+        "canonical": "#f4f5f6",
+        "tonalRamp": [
+          "oklch(15.00% 0.00171 247.84)",
+          "oklch(26.43% 0.00171 247.84)",
+          "oklch(37.86% 0.00171 247.84)",
+          "oklch(49.29% 0.00171 247.84)",
+          "oklch(60.71% 0.00171 247.84)",
+          "oklch(72.14% 0.00171 247.84)",
+          "oklch(83.57% 0.00171 247.84)",
+          "oklch(95.00% 0.00171 247.84)"
+        ]
+      },
+      "light-surface": {
+        "role": "neutral",
+        "displayName": "White Surface",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "oklch(15.00% 0.00000 0.00)",
+          "oklch(26.43% 0.00000 0.00)",
+          "oklch(37.86% 0.00000 0.00)",
+          "oklch(49.29% 0.00000 0.00)",
+          "oklch(60.71% 0.00000 0.00)",
+          "oklch(72.14% 0.00000 0.00)",
+          "oklch(83.57% 0.00000 0.00)",
+          "oklch(95.00% 0.00000 0.00)"
+        ]
+      },
+      "light-raised": {
+        "role": "neutral",
+        "displayName": "Cool Off-white Raised",
+        "canonical": "#eef0f2",
+        "tonalRamp": [
+          "oklch(15.00% 0.00344 247.86)",
+          "oklch(26.43% 0.00344 247.86)",
+          "oklch(37.86% 0.00344 247.86)",
+          "oklch(49.29% 0.00344 247.86)",
+          "oklch(60.71% 0.00344 247.86)",
+          "oklch(72.14% 0.00344 247.86)",
+          "oklch(83.57% 0.00344 247.86)",
+          "oklch(95.00% 0.00344 247.86)"
+        ]
+      },
+      "light-line": {
+        "role": "neutral",
+        "displayName": "Cool Off-white Line",
+        "canonical": "#d7dbe0",
+        "tonalRamp": [
+          "oklch(15.00% 0.00811 253.86)",
+          "oklch(26.43% 0.00811 253.86)",
+          "oklch(37.86% 0.00811 253.86)",
+          "oklch(49.29% 0.00811 253.86)",
+          "oklch(60.71% 0.00811 253.86)",
+          "oklch(72.14% 0.00811 253.86)",
+          "oklch(83.57% 0.00811 253.86)",
+          "oklch(95.00% 0.00811 253.86)"
+        ]
+      },
+      "light-text": {
+        "role": "neutral",
+        "displayName": "Light-mode Text",
+        "canonical": "#1c2027",
+        "tonalRamp": [
+          "oklch(15.00% 0.01467 261.65)",
+          "oklch(26.43% 0.01467 261.65)",
+          "oklch(37.86% 0.01467 261.65)",
+          "oklch(49.29% 0.01467 261.65)",
+          "oklch(60.71% 0.01467 261.65)",
+          "oklch(72.14% 0.01467 261.65)",
+          "oklch(83.57% 0.01467 261.65)",
+          "oklch(95.00% 0.01467 261.65)"
+        ]
+      },
+      "light-muted": {
+        "role": "neutral",
+        "displayName": "Light-mode Muted",
+        "canonical": "#58616e",
+        "tonalRamp": [
+          "oklch(15.00% 0.02369 257.51)",
+          "oklch(26.43% 0.02369 257.51)",
+          "oklch(37.86% 0.02369 257.51)",
+          "oklch(49.29% 0.02369 257.51)",
+          "oklch(60.71% 0.02369 257.51)",
+          "oklch(72.14% 0.02369 257.51)",
+          "oklch(83.57% 0.02369 257.51)",
+          "oklch(95.00% 0.02369 257.51)"
+        ]
+      },
+      "preview-blue": {
+        "role": "neutral",
+        "displayName": "Preview Blue",
+        "canonical": "#142137",
+        "tonalRamp": [
+          "oklch(15.00% 0.04592 260.45)",
+          "oklch(26.43% 0.04592 260.45)",
+          "oklch(37.86% 0.04592 260.45)",
+          "oklch(49.29% 0.04592 260.45)",
+          "oklch(60.71% 0.04592 260.45)",
+          "oklch(72.14% 0.04592 260.45)",
+          "oklch(83.57% 0.04592 260.45)",
+          "oklch(95.00% 0.04592 260.45)"
+        ]
+      },
+      "range-bg": {
+        "role": "neutral",
+        "displayName": "Range Blue",
+        "canonical": "#101b30",
+        "tonalRamp": [
+          "oklch(15.00% 0.04419 262.40)",
+          "oklch(26.43% 0.04419 262.40)",
+          "oklch(37.86% 0.04419 262.40)",
+          "oklch(49.29% 0.04419 262.40)",
+          "oklch(60.71% 0.04419 262.40)",
+          "oklch(72.14% 0.04419 262.40)",
+          "oklch(83.57% 0.04419 262.40)",
+          "oklch(95.00% 0.04419 262.40)"
+        ]
+      },
+      "range-chrome": {
+        "role": "neutral",
+        "displayName": "Range Chrome",
+        "canonical": "#101a2b",
+        "tonalRamp": [
+          "oklch(15.00% 0.03671 260.60)",
+          "oklch(26.43% 0.03671 260.60)",
+          "oklch(37.86% 0.03671 260.60)",
+          "oklch(49.29% 0.03671 260.60)",
+          "oklch(60.71% 0.03671 260.60)",
+          "oklch(72.14% 0.03671 260.60)",
+          "oklch(83.57% 0.03671 260.60)",
+          "oklch(95.00% 0.03671 260.60)"
+        ]
+      },
+      "range-line": {
+        "role": "neutral",
+        "displayName": "Range Line",
+        "canonical": "#26364d",
+        "tonalRamp": [
+          "oklch(15.00% 0.04620 257.43)",
+          "oklch(26.43% 0.04620 257.43)",
+          "oklch(37.86% 0.04620 257.43)",
+          "oklch(49.29% 0.04620 257.43)",
+          "oklch(60.71% 0.04620 257.43)",
+          "oklch(72.14% 0.04620 257.43)",
+          "oklch(83.57% 0.04620 257.43)",
+          "oklch(95.00% 0.04620 257.43)"
+        ]
+      },
+      "range-text": {
+        "role": "neutral",
+        "displayName": "Range Text",
+        "canonical": "#eef5ff",
+        "tonalRamp": [
+          "oklch(15.00% 0.01535 257.20)",
+          "oklch(26.43% 0.01535 257.20)",
+          "oklch(37.86% 0.01535 257.20)",
+          "oklch(49.29% 0.01535 257.20)",
+          "oklch(60.71% 0.01535 257.20)",
+          "oklch(72.14% 0.01535 257.20)",
+          "oklch(83.57% 0.01535 257.20)",
+          "oklch(95.00% 0.01535 257.20)"
+        ]
+      },
+      "range-muted": {
+        "role": "neutral",
+        "displayName": "Range Muted",
+        "canonical": "#9aaec8",
+        "tonalRamp": [
+          "oklch(15.00% 0.04378 255.05)",
+          "oklch(26.43% 0.04378 255.05)",
+          "oklch(37.86% 0.04378 255.05)",
+          "oklch(49.29% 0.04378 255.05)",
+          "oklch(60.71% 0.04378 255.05)",
+          "oklch(72.14% 0.04378 255.05)",
+          "oklch(83.57% 0.04378 255.05)",
+          "oklch(95.00% 0.04378 255.05)"
+        ]
+      },
+      "range-wall": {
+        "role": "neutral",
+        "displayName": "Matte Blue Wall",
+        "canonical": "#263650",
+        "tonalRamp": [
+          "oklch(15.00% 0.05097 259.82)",
+          "oklch(26.43% 0.05097 259.82)",
+          "oklch(37.86% 0.05097 259.82)",
+          "oklch(49.29% 0.05097 259.82)",
+          "oklch(60.71% 0.05097 259.82)",
+          "oklch(72.14% 0.05097 259.82)",
+          "oklch(83.57% 0.05097 259.82)",
+          "oklch(95.00% 0.05097 259.82)"
+        ]
+      },
+      "range-ceiling": {
+        "role": "neutral",
+        "displayName": "Matte Blue Ceiling",
+        "canonical": "#17263f",
+        "tonalRamp": [
+          "oklch(15.00% 0.05121 260.16)",
+          "oklch(26.43% 0.05121 260.16)",
+          "oklch(37.86% 0.05121 260.16)",
+          "oklch(49.29% 0.05121 260.16)",
+          "oklch(60.71% 0.05121 260.16)",
+          "oklch(72.14% 0.05121 260.16)",
+          "oklch(83.57% 0.05121 260.16)",
+          "oklch(95.00% 0.05121 260.16)"
+        ]
+      },
+      "range-structure": {
+        "role": "neutral",
+        "displayName": "Structure Blue",
+        "canonical": "#426181",
+        "tonalRamp": [
+          "oklch(15.00% 0.06345 250.02)",
+          "oklch(26.43% 0.06345 250.02)",
+          "oklch(37.86% 0.06345 250.02)",
+          "oklch(49.29% 0.06345 250.02)",
+          "oklch(60.71% 0.06345 250.02)",
+          "oklch(72.14% 0.06345 250.02)",
+          "oklch(83.57% 0.06345 250.02)",
+          "oklch(95.00% 0.06345 250.02)"
+        ]
+      },
+      "range-strip": {
+        "role": "secondary",
+        "displayName": "Strip Cyan",
+        "canonical": "#53c8f0",
+        "tonalRamp": [
+          "oklch(15.00% 0.11819 224.10)",
+          "oklch(26.43% 0.11819 224.10)",
+          "oklch(37.86% 0.11819 224.10)",
+          "oklch(49.29% 0.11819 224.10)",
+          "oklch(60.71% 0.11819 224.10)",
+          "oklch(72.14% 0.11819 224.10)",
+          "oklch(83.57% 0.11819 224.10)",
+          "oklch(95.00% 0.11819 224.10)"
+        ]
+      },
+      "precision": {
+        "role": "secondary",
+        "displayName": "Precision Cyan",
+        "canonical": "#48d9fa",
+        "tonalRamp": [
+          "oklch(15.00% 0.12794 216.39)",
+          "oklch(26.43% 0.12794 216.39)",
+          "oklch(37.86% 0.12794 216.39)",
+          "oklch(49.29% 0.12794 216.39)",
+          "oklch(60.71% 0.12794 216.39)",
+          "oklch(72.14% 0.12794 216.39)",
+          "oklch(83.57% 0.12794 216.39)",
+          "oklch(95.00% 0.12794 216.39)"
+        ]
+      },
+      "switching": {
+        "role": "secondary",
+        "displayName": "Switching Lavender",
+        "canonical": "#9c9bff",
+        "tonalRamp": [
+          "oklch(15.00% 0.14308 282.73)",
+          "oklch(26.43% 0.14308 282.73)",
+          "oklch(37.86% 0.14308 282.73)",
+          "oklch(49.29% 0.14308 282.73)",
+          "oklch(60.71% 0.14308 282.73)",
+          "oklch(72.14% 0.14308 282.73)",
+          "oklch(83.57% 0.14308 282.73)",
+          "oklch(95.00% 0.14308 282.73)"
+        ]
+      },
+      "tracking": {
+        "role": "secondary",
+        "displayName": "Tracking Mint",
+        "canonical": "#55ecc9",
+        "tonalRamp": [
+          "oklch(15.00% 0.13702 174.47)",
+          "oklch(26.43% 0.13702 174.47)",
+          "oklch(37.86% 0.13702 174.47)",
+          "oklch(49.29% 0.13702 174.47)",
+          "oklch(60.71% 0.13702 174.47)",
+          "oklch(72.14% 0.13702 174.47)",
+          "oklch(83.57% 0.13702 174.47)",
+          "oklch(95.00% 0.13702 174.47)"
+        ]
+      },
+      "movement": {
+        "role": "secondary",
+        "displayName": "Movement Amber",
+        "canonical": "#ffc278",
+        "tonalRamp": [
+          "oklch(15.00% 0.11507 70.62)",
+          "oklch(26.43% 0.11507 70.62)",
+          "oklch(37.86% 0.11507 70.62)",
+          "oklch(49.29% 0.11507 70.62)",
+          "oklch(60.71% 0.11507 70.62)",
+          "oklch(72.14% 0.11507 70.62)",
+          "oklch(83.57% 0.11507 70.62)",
+          "oklch(95.00% 0.11507 70.62)"
+        ]
+      },
+      "inactive-orb": {
+        "role": "neutral",
+        "displayName": "Inactive Orb Blue",
+        "canonical": "#425c82",
+        "tonalRamp": [
+          "oklch(15.00% 0.06955 257.77)",
+          "oklch(26.43% 0.06955 257.77)",
+          "oklch(37.86% 0.06955 257.77)",
+          "oklch(49.29% 0.06955 257.77)",
+          "oklch(60.71% 0.06955 257.77)",
+          "oklch(72.14% 0.06955 257.77)",
+          "oklch(83.57% 0.06955 257.77)",
+          "oklch(95.00% 0.06955 257.77)"
+        ]
+      },
+      "crosshair": {
+        "role": "neutral",
+        "displayName": "Crosshair Ice",
+        "canonical": "#ecf8ff",
+        "tonalRamp": [
+          "oklch(15.00% 0.01581 233.02)",
+          "oklch(26.43% 0.01581 233.02)",
+          "oklch(37.86% 0.01581 233.02)",
+          "oklch(49.29% 0.01581 233.02)",
+          "oklch(60.71% 0.01581 233.02)",
+          "oklch(72.14% 0.01581 233.02)",
+          "oklch(83.57% 0.01581 233.02)",
+          "oklch(95.00% 0.01581 233.02)"
+        ]
+      },
+      "error-dark": {
+        "role": "neutral",
+        "displayName": "Error Rose",
+        "canonical": "#ef9d96",
+        "tonalRamp": [
+          "oklch(15.00% 0.09934 24.95)",
+          "oklch(26.43% 0.09934 24.95)",
+          "oklch(37.86% 0.09934 24.95)",
+          "oklch(49.29% 0.09934 24.95)",
+          "oklch(60.71% 0.09934 24.95)",
+          "oklch(72.14% 0.09934 24.95)",
+          "oklch(83.57% 0.09934 24.95)",
+          "oklch(95.00% 0.09934 24.95)"
+        ]
+      },
+      "error-light": {
+        "role": "neutral",
+        "displayName": "Error Brick",
+        "canonical": "#a23129",
+        "tonalRamp": [
+          "oklch(15.00% 0.15017 28.11)",
+          "oklch(26.43% 0.15017 28.11)",
+          "oklch(37.86% 0.15017 28.11)",
+          "oklch(49.29% 0.15017 28.11)",
+          "oklch(60.71% 0.15017 28.11)",
+          "oklch(72.14% 0.15017 28.11)",
+          "oklch(83.57% 0.15017 28.11)",
+          "oklch(95.00% 0.15017 28.11)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Result Score",
+        "purpose": "Centered score after a run; tabular numerals."
+      },
+      "headline": {
+        "displayName": "Page Heading",
+        "purpose": "Primary shell page titles."
+      },
+      "brief-headline": {
+        "displayName": "Drill Heading",
+        "purpose": "Name of the selected physical exercise."
+      },
+      "title": {
+        "displayName": "Card and Panel Title",
+        "purpose": "Drill names and concise panel headings."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Functional reading and controls."
+      },
+      "label": {
+        "displayName": "Supporting Label",
+        "purpose": "Context, measurements and supporting text."
+      },
+      "button": {
+        "displayName": "Action Label",
+        "purpose": "Standard primary and secondary actions."
+      },
+      "hud-value": {
+        "displayName": "HUD Value",
+        "purpose": "Time, score and accuracy with tabular numerals."
+      },
+      "hud-label": {
+        "displayName": "HUD Label",
+        "purpose": "Small uppercase labels above metrics."
+      }
+    },
+    "shadows": [
+      {
+        "name": "toast",
+        "value": "0 10px 30px #0003",
+        "purpose": "Only the transient toast; persistent shell surfaces remain flat."
+      }
+    ],
+    "motion": [
+      {
+        "name": "button-state",
+        "value": "background .15s, filter .15s",
+        "purpose": "Standard button state changes."
+      },
+      {
+        "name": "button-hover",
+        "value": "brightness(1.08)",
+        "purpose": "The source hover filter on enabled standard buttons."
+      },
+      {
+        "name": "preview-state",
+        "value": "background .2s",
+        "purpose": "Preview background change while its card action is hovered."
+      },
+      {
+        "name": "impact-lifetime",
+        "value": ".18s",
+        "purpose": "Expanding, fading spatial hit ring; omitted when reduced mode is enabled."
+      },
+      {
+        "name": "bloom-normal",
+        "value": ".32",
+        "purpose": "Three.js bloom strength, with radius .5 and threshold 1; source-derived."
+      },
+      {
+        "name": "bloom-reduced",
+        "value": ".12",
+        "purpose": "Bloom strength with reduced motion and glow; the hit ring is also omitted."
+      },
+      {
+        "name": "reduced-shell",
+        "value": "transition: none !important; animation: none !important",
+        "purpose": "User reduced-mode class removes shell animation and transitions."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "wide",
+        "value": "min-width: 1500px"
+      },
+      {
+        "name": "compact-desktop",
+        "value": "max-width: 1000px"
+      },
+      {
+        "name": "mobile",
+        "value": "max-width: 720px"
+      },
+      {
+        "name": "single-column-cards",
+        "value": "max-width: 420px"
+      },
+      {
+        "name": "short-landscape",
+        "value": "max-height: 520px and orientation: landscape"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Default main action with the live configurable shell accent.",
+      "html": "<button class=\"ds-primary\">Enter drill</button>",
+      "css": ".ds-primary{font:550 13px/1.5 Inter,Arial,sans-serif;display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:11px 19px;border-radius:6px;cursor:pointer;transition:background .15s,filter .15s;background:var(--accent,#f17a59);color:var(--accent-ink,#111315);border:0}.ds-primary:hover:not(:disabled){filter:brightness(1.08)}.ds-primary:focus-visible{outline:2px solid var(--accent-text,#ffab8b);outline-offset:4px;}.ds-primary:disabled{opacity:.45;cursor:default}@media(prefers-reduced-motion:reduce){.ds-primary{transition:none}}"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Outlined raised-surface action for secondary choices.",
+      "html": "<button class=\"ds-secondary\">Train weakest</button>",
+      "css": ".ds-secondary{font:550 13px/1.5 Inter,Arial,sans-serif;display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:11px 19px;border-radius:6px;cursor:pointer;transition:background .15s,filter .15s;background:var(--raised,#24282c);color:var(--text,#eeeef0);border:1px solid var(--line,#33383e)}.ds-secondary:hover:not(:disabled){filter:brightness(1.08)}.ds-secondary:focus-visible{outline:2px solid var(--accent-text,#ffab8b);outline-offset:4px;}.ds-secondary:disabled{opacity:.45;cursor:default}@media(prefers-reduced-motion:reduce){.ds-secondary{transition:none}}"
+    },
+    {
+      "name": "Quiet Button",
+      "kind": "button",
+      "refersTo": "button-quiet",
+      "description": "Muted text-only action for supporting navigation and disclosures.",
+      "html": "<button class=\"ds-quiet\">Benchmark all four</button>",
+      "css": ".ds-quiet{font:400 12px/1.5 Inter,Arial,sans-serif;min-height:44px;padding:9px 5px;background:none;border:0;color:var(--muted,#a4aab2);cursor:pointer}.ds-quiet:hover{color:var(--text,#eeeef0)}.ds-quiet:focus-visible{outline:2px solid var(--accent-text,#ffab8b);outline-offset:4px;}.ds-quiet:disabled{opacity:.45;cursor:default}"
+    },
+    {
+      "name": "Text Field",
+      "kind": "input",
+      "refersTo": "field",
+      "description": "Labeled public username field using native input behavior.",
+      "html": "<label class=\"ds-label\" for=\"ds-username\">Public username<input class=\"ds-field\" id=\"ds-username\" autocomplete=\"nickname\" placeholder=\"3–20 letters, numbers or _\" minlength=\"3\" maxlength=\"20\"></label>",
+      "css": ".ds-label{display:block;font:400 13px/1.5 Inter,Arial,sans-serif;color:var(--muted,#a4aab2);max-width:360px}.ds-field{box-sizing:border-box;display:block;width:100%;min-width:0;min-height:44px;margin-top:9px;padding:10px 12px;font:400 14px/1.5 Inter,Arial,sans-serif;background:var(--raised,#24282c);color:var(--text,#eeeef0);border:1px solid var(--line,#33383e);border-radius:6px;caret-color:var(--accent,#f17a59)}.ds-field:focus-visible{outline:2px solid var(--accent-text,#ffab8b);outline-offset:4px;}.ds-field:disabled{opacity:.45}"
+    },
+    {
+      "name": "Navigation Item",
+      "kind": "nav",
+      "refersTo": "navigation-item",
+      "description": "Active desktop destination with the exact training stroke icon.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Main\"><a class=\"ds-nav-item\" href=\"#training\" aria-current=\"page\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M3 12h4m10 0h4M12 3v4m0 10v4M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10\"/></svg><span>Train</span></a></nav>",
+      "css": ".ds-nav{max-width:170px}.ds-nav-item{display:flex;align-items:center;gap:12px;min-height:48px;padding:13px 12px;border-radius:7px;color:var(--muted,#a4aab2);font:400 14px/1.5 Inter,Arial,sans-serif;text-decoration:none}.ds-nav-item:hover,.ds-nav-item[aria-current=page]{background:var(--raised,#24282c);color:var(--text,#eeeef0)}.ds-nav-item[aria-current=page] svg{color:var(--accent-text,#ffab8b)}.ds-nav-item:focus-visible{outline:2px solid var(--accent-text,#ffab8b);outline-offset:4px;}"
+    },
+    {
+      "name": "Drill Card",
+      "kind": "card",
+      "refersTo": "drill-card",
+      "description": "Precision card using the exact code-native preview geometry and short instruction.",
+      "html": "<article class=\"ds-card\"><svg class=\"ds-card-preview\" viewBox=\"0 0 320 160\" aria-hidden=\"true\"><path d=\"M28 25h264v118H28z\" stroke=\"currentColor\" stroke-width=\".6\" fill=\"none\" opacity=\".13\"/><g fill=\"currentColor\"><circle cx=\"86\" cy=\"55\" r=\"5\"/><circle cx=\"156\" cy=\"77\" r=\"5\"/><circle cx=\"210\" cy=\"44\" r=\"5\"/><circle cx=\"105\" cy=\"110\" r=\"5\"/><circle cx=\"235\" cy=\"105\" r=\"5\"/><circle cx=\"178\" cy=\"126\" r=\"5\"/></g></svg><div class=\"ds-card-copy\"><div class=\"ds-card-title\"><h2>Precision</h2><span>L3</span></div><p>Click the small orbs. Make every shot count.</p><div class=\"ds-card-foot\"><span>Not measured</span><button class=\"ds-card-start\">Start</button></div></div></article>",
+      "css": ".ds-card{max-width:520px;border:1px solid var(--line,#33383e);border-radius:var(--radius,12px);overflow:hidden;background:var(--surface,#1c1f22);color:var(--text,#eeeef0);font:400 14px/1.5 Inter,Arial,sans-serif}.ds-card-preview{display:block;width:100%;height:180px;background:#142137;color:#48d9fa;transition:background .2s}.ds-card-copy{padding:24px}.ds-card-title{display:flex;justify-content:space-between;gap:14px;align-items:center}.ds-card-title h2{margin:0;font-size:19px;letter-spacing:-.02em;font-weight:550}.ds-card-title>span{font-size:12px;color:var(--muted,#a4aab2)}.ds-card-copy>p{margin:8px 0 0;font-size:13px;color:var(--muted,#a4aab2)}.ds-card-foot{display:flex;justify-content:space-between;align-items:center;margin-top:26px;gap:15px}.ds-card-foot>span{font-size:12px;color:var(--muted,#a4aab2)}.ds-card-start{font:550 13px/1.5 Inter,Arial,sans-serif;display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:11px 19px;border-radius:6px;cursor:pointer;transition:background .15s,filter .15s;min-width:92px;background:var(--accent,#f17a59);color:var(--accent-ink,#111315);border:0}.ds-card-start:hover{filter:brightness(1.08)}.ds-card-start:focus-visible{outline:2px solid var(--accent-text,#ffab8b);outline-offset:4px;}.ds-card:has(button:hover) .ds-card-preview{background:#1b2c46}@media(prefers-reduced-motion:reduce){.ds-card-preview,.ds-card-start{transition:none}}"
+    },
+    {
+      "name": "Tracking Preview",
+      "kind": "custom",
+      "refersTo": "drill-preview",
+      "description": "Exact SVG pursuit path from the tracking drill; no raster or shader substitute.",
+      "html": "<svg class=\"ds-preview\" viewBox=\"0 0 320 160\" role=\"img\" aria-label=\"Tracking drill: follow the moving orb\"><path d=\"M28 25h264v118H28z\" stroke=\"currentColor\" stroke-width=\".6\" fill=\"none\" opacity=\".13\"/><g fill=\"currentColor\"><path d=\"M50 102C100 102 86 49 144 49S180 112 266 82\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" opacity=\".35\"/><circle cx=\"194\" cy=\"91\" r=\"13\"/></g></svg>",
+      "css": ".ds-preview{display:block;width:100%;max-width:520px;height:180px;background:#142137;color:#55ecc9}"
+    },
+    {
+      "name": "Game Toolbar",
+      "kind": "custom",
+      "refersTo": "game-toolbar",
+      "description": "Fixed blue metric bar with tabular values and explicit pause and exit actions.",
+      "html": "<div class=\"ds-toolbar\" role=\"group\" aria-label=\"Drill status\"><b>Precision</b><div class=\"ds-metrics\"><span><small>TIME</small><b>0:30</b></span><span><small>SCORE</small><b>0</b></span><span><small>ACCURACY</small><b>—</b></span></div><div class=\"ds-toolbar-actions\"><button>Pause</button><button>Exit</button></div></div>",
+      "css": ".ds-toolbar{box-sizing:border-box;height:80px;padding:12px 26px;display:flex;align-items:center;justify-content:space-between;gap:25px;background:#101a2b;border-bottom:1px solid #26364d;color:#eef5ff;font:400 14px/1.5 Inter,Arial,sans-serif}.ds-toolbar>b{width:180px;font-size:14px;font-weight:500}.ds-metrics{display:flex;gap:48px}.ds-metrics span{text-align:center;min-width:65px}.ds-metrics small{font-size:9px;color:#9aaec8;letter-spacing:.07em;display:block;margin-bottom:2px}.ds-metrics b{display:block;font-size:24px;font-weight:500;font-variant-numeric:tabular-nums;line-height:1.2}.ds-toolbar-actions{width:180px;display:flex;justify-content:flex-end;gap:20px}.ds-toolbar-actions button{font:400 12px/1.5 Inter,Arial,sans-serif;color:#b4c5dc;min-height:44px;padding:9px 5px;background:none;border:0;cursor:pointer}.ds-toolbar-actions button:hover{color:#eef5ff}.ds-toolbar-actions button:focus-visible{outline:2px solid var(--accent-text,#ffab8b);outline-offset:4px;}@media(max-width:720px){.ds-toolbar{height:90px;padding:10px 15px;flex-wrap:wrap;gap:2px}.ds-toolbar>b{width:auto;flex:1;order:1;font-size:12px}.ds-toolbar-actions{width:auto;order:2;gap:15px}.ds-toolbar-actions button{font-size:11px;min-height:32px;padding-block:5px}.ds-metrics{width:100%;order:3;gap:35px;justify-content:center}.ds-metrics small{font-size:8px;margin:0}.ds-metrics b{font-size:21px}.ds-metrics span{min-width:60px}}"
+    },
+    {
+      "name": "Movement Readiness Cue",
+      "kind": "custom",
+      "refersTo": "movement-cue",
+      "description": "The three exact source labels, amber for Move or Settle and mint for Shoot.",
+      "html": "<div class=\"ds-cue-demo\"><span class=\"ds-cue\">Move</span><span class=\"ds-cue\">Settle</span><span class=\"ds-cue\" data-ready=\"true\">Shoot</span></div>",
+      "css": ".ds-cue-demo{display:flex;flex-wrap:wrap;gap:12px;background:#101b30;padding:24px}.ds-cue{font:400 13px/1.5 Inter,Arial,sans-serif;color:#ffc278;padding:7px 16px;background:#101b30d9;border:1px solid #ffc27842;border-radius:4px}.ds-cue[data-ready=true]{color:#55ecc9;border-color:#55ecc942}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Matte Aim Room",
+    "overview": "The application uses a restrained graphite and coral shell around an abstract blue practice room. Controls are flat, compact and legible. The room carries the spatial character: matte architecture, smooth luminous spheres and thin cyan strips, with the interface receding around the target.\n\nLight mode changes the application shell to cool off-white surfaces. The range retains its blue environment in either theme. Existing Inter Variable provides all typography; illustrations are exact inline SVG geometry, and the room is Three.js geometry. This implementation introduces no shipping raster artwork or new typeface.\n\nThis document records the implementation in `dist/style.css`, `dist/app.js`, `dist/core.js` and `src/fps-engine.js`, with the current desktop and mobile shell/brief captures as supporting evidence. There is no approved image comp. The available browser reports disabled GPU rendering, so the 3D material and bloom descriptions are source-derived and do not certify their rendered GPU appearance.",
+    "keyCharacteristics": [
+      "Graphite or cool off-white surfaces with a configurable coral action accent.",
+      "Matte blue room, thin cyan light strips and smooth colored target spheres.",
+      "Flat bordered controls, modest corners and short functional copy.",
+      "Code-native previews and immediate spatial hit feedback without camera kick."
+    ],
+    "rules": [
+      {
+        "name": "The Theme Boundary Rule",
+        "body": "Theme and accent customization recolor the application controls; preserve the fixed blue range and the four drill identities.",
+        "section": "colors"
+      },
+      {
+        "name": "The Short Instruction Rule",
+        "body": "Keep the prominent instruction to the physical action; place scoring explanations behind the existing disclosure.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat Shell Rule",
+        "body": "Keep persistent cards and controls flat; reserve glow for targets and room light strips.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** retain the graphite/coral shell and its cool light-mode counterpart.",
+      "**Do** preserve the four drill colors across previews, histories and 3D targets.",
+      "**Do** keep the room matte blue, its light strips thin and target glow restrained.",
+      "**Do** keep controls visibly focusable and honor the reduced motion and glow setting.",
+      "**Do** keep previews code-native and use the existing Inter Variable font.",
+      "**Do** distinguish source-derived 3D styling from verified GPU appearance."
+    ],
+    "donts": [
+      "**Don't** add a weapon viewmodel, recoil camera kick, realistic materials or humanoid targets.",
+      "**Don't** introduce more drill categories, decision quizzes or tactical content into the four-drill interface.",
+      "**Don't** add marketing slogans, emojis or long explanations to primary flows.",
+      "**Don't** replace flat shell surfaces with decorative glow or heavy shadows, or turn code-native previews into raster approximations.",
+      "**Don't** let light mode erase the blue range or let shell accent changes recolor drill identities."
+    ]
+  }
+}

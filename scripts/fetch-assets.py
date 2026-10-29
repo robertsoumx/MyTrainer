@@ -8,7 +8,9 @@ import sys
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 MANIFEST = json.loads((ROOT / 'scripts/asset-downloads.json').read_text())
-if '--2d' in sys.argv:
+if '--fonts-only' in sys.argv:
+    MANIFEST = [item for item in MANIFEST if '/fonts/' in item['path']]
+elif '--2d' in sys.argv:
     MANIFEST = [item for item in MANIFEST if '/models/' not in item['path'] and '/textures/' not in item['path']]
 
 def restore(item):

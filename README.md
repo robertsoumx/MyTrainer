@@ -1,43 +1,43 @@
 # MyTrainer / Stratum
 
-CS2 and VALORANT practice: https://robertsoumx.github.io/MyTrainer/.
+https://robertsoumx.github.io/MyTrainer/
 
-Version 1.7 restores the conventional first-person aim-trainer experience: a fixed center crosshair, mouse-look, shaded sphere targets, a textured training room, and detailed weapon-family viewmodels. The existing graphite/coral dashboard, optional light theme, first-run profile, progress and public leaderboard remain.
+Version 1.8 replaces the large catalog with **four physical drills**:
 
-## Existing components used
+- Precision: small, static targets for fine control.
+- Target switching: acquire the bright target and transition to the next.
+- Tracking: hold fire and follow a moving sphere.
+- Move & shoot: move, settle on the ground, then hit the target.
 
-- Three.js 0.180.0 and its actual PointerLockControls for captured mouse-look.
-- Rapier 0.21.0 WASM and its maintained kinematic character controller for capsule collision, ground contact, wall sliding, jumping and gravity. Rapier ray queries resolve targets and occluding cover in world space.
-- Non-overlapping target spawning adapted from Freddy Saez’s MIT [threejs-aim-trainer](https://github.com/freddysae0/threejs-aim-trainer), pinned to e28148a4de56809a1c0a6fbb7b3f6492fc85e3cb. The original algorithm and complete license are retained under third_party/.
-- Existing licensed GLB weapon models and CC0 PBR surface textures; complete attribution remains in dist/assets/credits.json. Additional engine/trainer notices are in dist/assets/engine-licenses.txt.
+Decision quizzes, tactical rounds, weapon viewmodels, reloads, ammunition and random recoil are absent from the active app. The 3D range is a matte blue training room with smooth luminous spheres, restrained bloom, antialiased architecture and a fixed center crosshair. The graphite/coral application retains a light theme, compact settings, first-run username consent, local progress and the shared leaderboard.
 
-## Controls
+## Gameplay
 
-Mouse movement rotates the viewpoint; the crosshair stays centered. Click or F fires. Tap responds to one press; Hold follows the selected weapon’s automatic cadence. Semi-auto, explicit burst, reload and alternate fire retain their profiles. Fire does not add camera recoil or a second view kick. If mouse capture is declined, unpressed pointer movement still rotates the view; Capture mouse retries capture. Touch drags rotate the view, with separate Fire and movement controls.
+Mouse movement turns the viewpoint without dragging. Click or F fires one deterministic, recoil-free center ray. Tap mode produces one shot per press; Hold mode fires at 10 Hz. Repeated events and simultaneous input sources never double-fire. Tracking requires holding fire and samples on-target time at 10 Hz. Each valid movement shot requires another 0.65 m of travel, a grounded stop, and 65 ms settled; jumping or firing while moving cannot count.
 
-WASD moves; Space jumps; Ctrl crouches; R reloads; right click / Alt fire changes supported alternate modes. Free practice supports live weapon switching. A short brief precedes every drill. The range fills the viewport and requests native fullscreen from a user action.
+Touch uses drag-to-look, short tap-to-fire, a separate held Fire pad and a movement stick only for the movement drill. Mouse capture can be retried; declined capture leaves free mouse-look. Keyboard movement applies only in Move & shoot. Each entry gives one instruction, expands to the full viewport, requests browser fullscreen and counts down before scoring. Pause releases all input and excludes inactive time.
 
-The scored timer starts after the physics and weapon model finish loading. Graphics/asset failures show an actionable error and do not start a scored attempt. The range requires WebGL 2; it never silently falls back to the rejected 2D dot field.
+Three.js 0.180 and its PointerLockControls render/control the range. Rapier 0.21 WASM owns capsule contacts, gravity, wall sliding and world ray hits. Spawning adapts the MIT target generator from [Freddy Saez’s aim trainer](https://github.com/freddysae0/threejs-aim-trainer), pinned to e28148a4de56809a1c0a6fbb7b3f6492fc85e3cb. Original source and licenses are retained in third_party/ and dist/assets/engine-licenses.txt. No external model or material downloads are needed for current gameplay.
 
-## Scores
+## Scores and data
 
-Eight mechanical drills, eight tactical decision skills, and three operated rounds retain the adaptive training structure. New full-drill contexts use fpsnative1 and rounds use roundfps1. Earlier contexts remain preserved in backups. Public standard benchmarks use a separate fps1 protocol; old v5 and 2d1 composites remain separate.
+Local practice adapts between levels 1–8. Aim quality is accuracy × (0.5 + 0.5 × capped pace), where pace compares successful hits/second with the drill/level target. Tracking quality is the share of samples on target while fire is held. Local skill scores weight difficulty; current progress weights the latest five results and preserves the first recorded result as the baseline.
 
-The durable public API at https://mytrainer-public-board.qiuchitching.chatgpt.site validates server-timed, single-use benchmark attempts. The composite remains 0–1000: average the latest three accepted level-3 benchmarks per eight skills, counting missing skills as zero. Three skills are needed to appear. Games and mouse/trackpad/touch boards are separate. Default weapon and 64° FOV are required. Browser results remain unverified and do not imply official game ranks.
+The new **focus4** public protocol fixes level 3, 30 seconds and 64° FOV. Composite score is the mean quality of all four drills × 10, using the latest three accepted results per drill. All four are required to appear. Games and mouse/trackpad/touch boards stay separate. Previous protocols and old local sessions remain preserved, without entering the new score. Scores are browser-reported trainer measurements, not official CS2/VALORANT ranks.
 
-Private history stays in this browser and can be exported. Public names and benchmarks require explicit confirmation. The profile is owned by its browser device key.
+The existing public Worker/D1 backend validates consent, hashes device keys, issues timed single-use attempts and supports public-profile withdrawal. Export/import retains local and historical progress; public device keys are not exported.
 
 ## Development
 
 ```sh
 npm ci
-python3 scripts/fetch-assets.py
+python3 scripts/fetch-assets.py --fonts-only
 npm run check
 npm test
 npm run build
 npm run dev
 ```
 
-The entry is dist/index.html. src/fps-engine.js bundles Three.js and the Rapier WASM runtime into dist/fps-engine.js; dist/range-fps.js integrates the drills, firing and UI. src/fps-physics.mjs is also exercised directly in Node using the real engine. The local API uses SQLite and the same Worker source as production. GitHub Actions builds and publishes dist/ to Pages.
+The app entry is dist/index.html. The engine bundles from src/fps-engine.js; no legacy decision, weapon or round scripts are loaded. GitHub Actions verifies and builds dist/ before publishing to Pages. Source for the separately hosted API is mirrored in leaderboard-worker/.
 
-Movement tuning and recoil are trainer profiles, not a reproduction of native CS2/VALORANT internals. See docs/fps-controls.md and docs/review-v17.md for behavior and verification boundaries.
+See docs/focus4-controls.md and docs/review-v18.md for current behavior and verification limits. Earlier release documents describe historical implementations. The provided cloud browser disables GPU rendering: current UI and direct engine/controller tests can be reviewed, but GPU appearance and hardware performance cannot be visually certified there.

@@ -1,7 +1,9 @@
-# MyTrainer public leaderboard API
+# MyTrainer public leaderboard
 
-Dependency-free Worker ESM with a Sites-managed D1 database. The frontend remains at robertsoumx.github.io/MyTrainer/. The public API only stores confirmed usernames, hashed device keys, timed attempt records and submitted benchmark metrics. No email, native-game credentials or private drill histories are collected.
+Worker/D1 API for https://robertsoumx.github.io/MyTrainer/.
 
-The v5 composite averages the latest three level-3 quality values for each of eight mechanical skills, treats missing skills as zero, and scales the result to 0–1000. A player appears after three skills. Game and input devices have separate boards. Results are browser-reported and unverified; server timing, ownership and replay checks are not anti-cheat.
+The current `focus4` protocol ranks Precision, Target Switching, Tracking and Move & Shoot. All four accepted level-3, 30-second benchmarks are required. The latest three runs per drill are averaged; each drill has equal weight in a 0–1000 composite. Aim drills count accuracy and normalized pace; tracking counts held-fire time on target. Games and mouse/trackpad/touch remain separate.
 
-Run `npm test`, `npm run db:generate` after schema changes, and `npm run build`. The build packages worker/index.js as dist/server/index.js and includes the manifest plus immutable Drizzle migrations in dist/.openai/. Hosted migrations run through Sites publication. Local tests apply the same SQL to a separate SQLite database.
+Earlier v5, 2d1 and fps1 records remain stored and queryable without entering focus4. No migration or historical data deletion is needed. Public username consent, hashed device keys, single-use timed attempts, validation, withdrawal and origin restrictions are preserved. Browser scores are not anti-cheat verified or official game ranks.
+
+Run `npm test` and `npm run build`. Deploy through the existing Sites project and source repository.

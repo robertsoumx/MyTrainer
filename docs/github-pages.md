@@ -1,4 +1,4 @@
-> Current release: v1.7, using the Three.js / Rapier FPS build. See [fps-controls.md](fps-controls.md) and [review-v17.md](review-v17.md). Earlier release notes below are historical.
+> Current release: v1.8, four physical drills and the focus4 scoring protocol. See [focus4-controls.md](focus4-controls.md) and [review-v18.md](review-v18.md). Earlier release notes below are historical.
 
 # GitHub Pages: MyTrainer
 

@@ -144,3 +144,8 @@ See docs/review-v16.md for the five pre-publication review passes. All 102 autom
 ## 1.7 · first-person engine replacement · October 28, 2026
 
 See docs/review-v17.md. Current validation uses 72 checks including real Rapier WASM collisions and actual Three.js mouse-look. Target spawning is adapted from a pinned MIT aim trainer; permissions and notices are retained. WebGL visual QA is blocked by the review browser’s explicitly disabled graphics context. This is recorded as unverified rather than substituting a rudimentary renderer. Five review passes covered sources, controls, physics, states and score compatibility.
+
+
+## 1.8 — October 29, 2026
+
+Four physical drills replace the decision catalog and round scenarios. See docs/review-v18.md for the current validation matrix, score protocol and explicit GPU verification limit. Current tests directly exercise firing/input, real Rapier and Three controls, four-drill history, first-run consent/countdown/error states and the Worker/SQLite API. Earlier counts below describe earlier versions only.

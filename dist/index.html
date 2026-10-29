@@ -1,32 +1,19 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#151719">
-  <meta name="description" content="Purposeful CS2 and VALORANT practice. Measure individual skills, train weak points, and make better round decisions in an adaptive tactical performance lab.">
-  <title>Stratum — Tactical Performance Lab</title>
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23f17a59'/%3E%3Cpath d='M17 43V21h12M47 21v22H35M24 32h16M32 24v16' fill='none' stroke='%23151719' stroke-width='5'/%3E%3C/svg%3E">
-  <link rel="stylesheet" href="style.css?v=1.7.0">
-  <script defer src="core.js?v=1.7.0"></script><script defer src="content.js?v=1.7.0"></script><script defer src="weapon-data.js?v=1.7.0"></script><script defer src="weapon-sim.js?v=1.7.0"></script><script defer src="movement.js?v=1.7.0"></script><script defer src="drill-guides.js?v=1.7.0"></script><script defer src="round-sim.js?v=1.7.0"></script><script defer src="fps-engine.js?v=1.7.0"></script><script defer src="range-fps.js?v=1.7.0"></script><script defer src="leaderboard.js?v=1.7.0"></script><script defer src="app.js?v=1.7.0"></script>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#151719">
+<meta name="description" content="Four focused aim drills for CS2 and VALORANT: precision, switching, tracking and movement.">
+<title>Stratum — Aim training</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23f17a59'/%3E%3Cpath d='M17 43V21h12M47 21v22H35M24 32h16M32 24v16' fill='none' stroke='%23151719' stroke-width='5'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css?v=1.8.0">
+<script defer src="core.js?v=1.8.0"></script><script defer src="movement.js?v=1.8.0"></script><script defer src="fps-engine.js?v=1.8.0"></script><script defer src="range-fps.js?v=1.8.0"></script><script defer src="leaderboard.js?v=1.8.0"></script><script defer src="app.js?v=1.8.0"></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <div class="app-shell">
-  <aside class="sidebar" aria-label="Primary navigation">
-    <a href="#overview" class="brand"><span class="brand-mark">[<span>+</span>]</span><span>stratum<span class="brand-dot">.</span></span></a>
-
-    <div class="game-switch" aria-label="Select game"><button data-game="cs2" class="selected">CS2</button><button data-game="valorant">VALORANT</button></div>
-    <nav id="nav"></nav>
-    <div class="sidebar-bottom"><button class="profile" data-page="settings"><span class="avatar">P1</span><span><b>Player one</b><small>Training profile</small></span><span class="chevron">↗</span></button></div>
-  </aside>
-  <div class="content-shell">
-    <header class="topbar"><div class="breadcrumb"><b id="page-label">Overview</b></div><div class="top-actions"><label class="mobile-game"><span class="sr-only">Select training game</span><select id="mobile-game"><option value="cs2">CS2</option><option value="valorant">VALORANT</option></select></label><button id="theme-toggle" class="theme-toggle" data-action="toggle-theme" aria-label="Toggle light and dark mode">Light mode</button><span class="local-indicator" id="save-status"><i></i> Saved on this device</span><button class="icon-button" data-action="help" aria-label="How Stratum works">?</button><button class="mini-profile" data-page="settings" aria-label="Open settings">P1</button></div></header>
-    <main id="main" tabindex="-1"></main>
-    <footer class="footer"><span>STRATUM</span><button data-action="method">Measurement & sources ↗</button></footer>
-  </div>
+<aside class="sidebar" aria-label="Primary navigation"><a class="brand" href="#training"><span class="brand-mark" aria-hidden="true">[+]</span>stratum.</a><nav id="nav"></nav><button class="profile" data-action="profile"><span class="avatar">P1</span><b>Player</b></button></aside>
+<div class="content-shell"><header class="topbar"><span id="page-label">Training</span><div class="top-actions"><label class="sr-only" for="game-select">Training game</label><select id="game-select"><option value="cs2">CS2</option><option value="valorant">VALORANT</option></select><button id="theme-toggle" class="quiet" data-action="theme">Light mode</button></div></header><main id="main" tabindex="-1"></main><footer><span id="save-status">Saved on this device</span><button class="quiet" data-action="method">About scoring</button></footer></div>
 </div>
-<div id="toast-region" aria-live="polite" aria-atomic="true"></div>
-<dialog id="modal"><div id="modal-body"></div></dialog>
-<noscript><div class="noscript">Stratum needs JavaScript to run interactive drills. Enable JavaScript and reload.</div></noscript>
+<div id="range-root"></div><div id="toast-region" role="status" aria-live="polite"></div>
+<dialog id="modal"><div id="modal-body"></div></dialog><noscript>Enable JavaScript to run the trainer.</noscript>
 </body></html>

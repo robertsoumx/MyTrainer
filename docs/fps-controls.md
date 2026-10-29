@@ -1,3 +1,5 @@
+> Historical v1.7 controls. Current controls: [focus4-controls.md](focus4-controls.md).
+
 # FPS range · 1.7
 
 Conventional first-person training replaces the flat pointer field. The crosshair stays at screen center and mouse movement rotates the camera. Captured movement uses the installed Three.js PointerLockControls implementation. Without capture, ordinary unpressed pointer movement also rotates the view; there is no drag-only desktop fallback. Touch uses drag-look and a separate Fire pad.

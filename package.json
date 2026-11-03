@@ -1,6 +1,6 @@
 {
   "name": "stratum-tactical-performance-lab",
-  "version": "1.8.0",
+  "version": "1.8.1",
   "private": true,
   "description": "Adaptive browser practice for CS2 and VALORANT, with transparent measurement boundaries.",
   "scripts": {

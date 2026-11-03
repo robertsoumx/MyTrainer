@@ -149,3 +149,8 @@ See docs/review-v17.md. Current validation uses 72 checks including real Rapier 
 ## 1.8 — October 29, 2026
 
 Four physical drills replace the decision catalog and round scenarios. See docs/review-v18.md for the current validation matrix, score protocol and explicit GPU verification limit. Current tests directly exercise firing/input, real Rapier and Three controls, four-drill history, first-run consent/countdown/error states and the Worker/SQLite API. Earlier counts below describe earlier versions only.
+
+
+## 1.8.1 — November 3, 2026
+
+Ordinary practice now automatically submits improvement-only personal bests. Regression coverage includes adaptive difficulty binding, equal/lower scores, existing-score preservation, composite generation from all four ordinary drills, game/input isolation, empty runs, withdrawal, FOV preservation and leaderboard outage recovery. The separate benchmark flow was removed. Gameplay, renderer, styles and controls are unchanged.

@@ -23,7 +23,7 @@ Three.js 0.180 and its PointerLockControls render/control the range. Rapier 0.21
 
 Local practice adapts between levels 1–8. Aim quality is accuracy × (0.5 + 0.5 × capped pace), where pace compares successful hits/second with the drill/level target. Tracking quality is the share of samples on target while fire is held. Local skill scores weight difficulty; current progress weights the latest five results and preserves the first recorded result as the baseline.
 
-The new **focus4** public protocol fixes level 3, 30 seconds and 64° FOV. Composite score is the mean quality of all four drills × 10, using the latest three accepted results per drill. All four are required to appear. Games and mouse/trackpad/touch boards stay separate. Previous protocols and old local sessions remain preserved, without entering the new score. Scores are browser-reported trainer measurements, not official CS2/VALORANT ranks.
+The **focus4** public board automatically uses ordinary 30-second practice. Each drill's personal best contributes equally to the composite out of 1000; a weaker or equal run never replaces it. All four drills need a positive result to appear. Adaptive difficulty is included in the score and bound to a server-issued attempt, with the existing level-3 public scale preserved. Your selected FOV and practice level are unchanged. Existing focus4 results remain a floor for automatic updates; earlier protocol histories stay separate. Scores are browser-reported trainer measurements, not official CS2/VALORANT ranks.
 
 The existing public Worker/D1 backend validates consent, hashes device keys, issues timed single-use attempts and supports public-profile withdrawal. Export/import retains local and historical progress; public device keys are not exported.
 

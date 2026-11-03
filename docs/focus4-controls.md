@@ -13,6 +13,11 @@ Mouse/trackpad: move to look, click or F to fire, Esc to pause. Capture mouse en
 
 Touch: drag the view to look; a short tap fires. Hold the separate Fire pad for tracking or Hold mode. The movement drill adds an independent left joystick, so move/look/fire can use separate pointers. Pointer cancellation, focus loss, pause and exit release inputs.
 
-The entry brief is separate from the running clock. Physics readiness, any required public attempt and a 3-second countdown precede the timer. Exit during loading/countdown cancels the launch. Viewport expansion is automatic; native fullscreen and pointer lock are requested within the entry gesture and remain browser-controlled.
+The entry brief is separate from the running clock. Physics readiness, the automatic public attempt and a 3-second countdown precede the timer. Exit during loading/countdown cancels the launch. Viewport expansion is automatic; native fullscreen and pointer lock are requested within the entry gesture and remain browser-controlled.
 
 The scene contains no weapon model, humanoids, quiz UI or realistic materials. The game is rendered using Three.js and restrained bloom; Rapier remains responsible for actual collision and ray intersections. This is a browser trainer, not a native CS2/VALORANT engine reproduction.
+
+
+## Automatic personal bests (1.8.1)
+
+Regular completed drills automatically update the public board when their difficulty-adjusted performance is better than the existing best. No separate benchmark, level reset or FOV change is required. The composite weights all four personal bests equally; lower results cannot reduce it. Existing focus4 scores remain protected. Public-profile withdrawal still opts out, and leaderboard failures preserve local practice.

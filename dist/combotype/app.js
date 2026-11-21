@@ -40,6 +40,7 @@ let generation = 0;
 const held = new Set();
 let tickPending = false;
 let pointerLetter = null;
+let captureCaps = false;
 
 function showError(error) {
   const label = $("#error");
@@ -219,6 +220,9 @@ async function process(response, revision) {
 }
 
 async function eventKey(vk, up, extra = {}) {
+  if (!up && vk >= 65 && vk <= 90 && !engine.active) {
+    captureCaps = Boolean(extra.caps);
+  }
   const revision = generation;
   const response = await core({
     op: "event",
@@ -237,6 +241,7 @@ async function eventKey(vk, up, extra = {}) {
 function choose(index) {
   const word = words[page * 9 + index];
   if (!word) return;
+  const caps = captureCaps;
   words = [];
   renderChoices();
   queue(async () => {
@@ -247,7 +252,7 @@ function choose(index) {
       context: context(),
       rules: options,
       state: writing,
-      caps: false,
+      caps,
     });
     if (revision !== generation) return;
     writing = response.state;
@@ -427,6 +432,10 @@ keyboard.addEventListener("pointerdown", event => {
   const letter = event.target.closest("[data-letter]")?.dataset.letter;
   if (!letter || !ready) return;
   event.preventDefault();
+  if (words.length) {
+    words = [];
+    renderChoices();
+  }
   editor.focus();
   keyboard.setPointerCapture(event.pointerId);
   pointerLetter = letter;

@@ -147,7 +147,8 @@ function drawTrail(points) {
     keyboard.left - rect.left + unit * (x + 0.5),
     first.top - rect.top + first.height / 2 + y * (first.height + 5),
   ];
-  ctx.strokeStyle = options.accent;
+  const accent = getComputedStyle(document.documentElement).getPropertyValue("--accent").trim();
+  ctx.strokeStyle = accent;
   ctx.lineWidth = 2.5;
   ctx.lineJoin = "round";
   ctx.lineCap = "round";
@@ -159,7 +160,7 @@ function drawTrail(points) {
   });
   ctx.stroke();
   const [x, y] = point(points[points.length - 1]);
-  ctx.fillStyle = options.accent;
+  ctx.fillStyle = accent;
   ctx.beginPath();
   ctx.arc(x, y, 4, 0, Math.PI * 2);
   ctx.fill();
@@ -266,6 +267,7 @@ function changePage(direction) {
 
 function cancel() {
   generation++;
+  tickPending = false;
   engine = { active: false, armed: false };
   words = [];
   held.clear();
@@ -279,6 +281,7 @@ function cancel() {
 
 editor.addEventListener("keydown", event => {
   if (!ready || event.isComposing) return;
+  if (event.key === "Shift" || event.key === "CapsLock") return;
   if (event.ctrlKey || event.metaKey || event.altKey) {
     cancel();
     writing = {};
@@ -460,8 +463,17 @@ function save() {
 function color(value) {
   if (!/^#[0-9a-f]{6}$/i.test(value)) return;
   options.accent = value;
-  document.documentElement.style.setProperty("--accent", value);
   const rgb = value.slice(1).match(/../g).map(x => parseInt(x, 16));
+  const luminance = channels => channels.reduce((sum, channel, index) => {
+    const linear = channel / 255;
+    return sum + [0.2126, 0.7152, 0.0722][index] *
+      (linear <= 0.04045 ? linear / 12.92 : ((linear + 0.055) / 1.055) ** 2.4);
+  }, 0);
+  let strong = [...rgb];
+  while (1.05 / (luminance(strong) + 0.05) < 4.7) {
+    strong = strong.map((channel, index) => Math.round(channel * 0.88 + [37, 28, 37][index] * 0.12));
+  }
+  document.documentElement.style.setProperty("--accent", `rgb(${strong.join(" ")})`);
   const blend = weight => `rgb(${rgb.map(v => Math.round(v * weight + 255 * (1 - weight))).join(" ")})`;
   document.documentElement.style.setProperty("--tint", blend(0.10));
   document.documentElement.style.setProperty("--line", blend(0.23));

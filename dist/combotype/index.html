@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#bd3069">
+  <meta name="description" content="Try ComboType's one-finger glide typing with automatic spacing and sentence capitalization.">
+  <title>ComboType</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="app">
+    <header class="masthead">
+      <a href="./" class="brand">ComboType</a>
+      <span class="edition">Glide typing</span>
+      <a class="download" href="ComboType-Setup.exe" download>Install for Windows</a>
+    </header>
+    <nav aria-label="Settings">
+      <button class="tab selected" data-page="glide" aria-current="page">Glide</button>
+      <button class="tab" data-page="writing">Writing</button>
+      <button class="tab" data-page="appearance">Appearance</button>
+      <p class="nav-note">Works in this editor.<br>The Windows app works across your apps.</p>
+      <a class="credits" href="THIRD-PARTY-NOTICES.txt">Data credits</a>
+    </nav>
+    <main>
+      <section id="glide" class="page">
+        <div class="page-heading">
+          <div><h1>Glide typing</h1><p>Hold the first letter, glide through the word, then pause.</p></div>
+          <label class="switch compact"><input id="enabled" type="checkbox" checked><span>Glide on</span></label>
+        </div>
+        <div class="workspace">
+          <div class="editor-column">
+            <div class="editor-top"><label for="editor">Your words</label><span id="status" role="status">Loading the writing engine…</span></div>
+            <textarea id="editor" spellcheck="false" autocomplete="off" autocapitalize="off" aria-describedby="editor-help" placeholder="Write here…"></textarea>
+            <div class="editor-actions"><span id="editor-help">Quick taps type normally.</span><button id="clear" class="text-button">Clear</button></div>
+            <div class="keyboard-wrap">
+              <div class="keyboard" id="keyboard" aria-label="Onscreen keyboard"></div>
+              <canvas id="trail" aria-hidden="true"></canvas>
+            </div>
+            <div class="capture-actions">
+              <button id="finish" class="secondary" disabled>Finish glide <kbd>Enter</kbd></button>
+              <button id="cancel" class="text-button" disabled>Cancel <kbd>Esc</kbd></button>
+            </div>
+          </div>
+          <aside class="suggestions" aria-labelledby="choices-title">
+            <h2 id="choices-title">Word choices</h2>
+            <p id="choice-hint">Pause after gliding to see suggestions.</p>
+            <div id="choices" role="list"></div>
+            <div id="paging" hidden><button id="previous" aria-label="Previous nine suggestions">Previous</button><span id="page-number"></span><button id="next" aria-label="Next nine suggestions">Next</button></div>
+            <p class="choice-help"><kbd>1–9</kbd> choose · <kbd>Tab</kbd> more</p>
+          </aside>
+        </div>
+        <details class="timing"><summary>Glide timing</summary><div class="timing-fields">
+          <label>Start hold <span><input id="arm" type="number" min="100" max="1000" value="185" step="5"> ms</span></label>
+          <label>End pause <span><input id="gap" type="number" min="180" max="1800" value="450" step="10"> ms</span></label>
+        </div><p>Increase the end pause for more time between letters.</p></details>
+      </section>
+      <section id="writing" class="page" hidden>
+        <h1>Smart punctuation</h1><p>Spacing and sentence rules for a smoother writing flow.</p>
+        <div class="rule-list">
+          <label class="rule"><span><strong>Automatic spacing</strong><small>Separate words and remove spaces before punctuation.</small></span><input id="spacing" type="checkbox" checked></label>
+          <label class="rule"><span><strong>Sentence capitalization</strong><small>Capitalize sentences, new lines, and the pronoun I.</small></span><input id="capitals" type="checkbox" checked></label>
+          <label class="rule"><span><strong>Double-space full stop</strong><small>Press Space twice to insert a full stop and a space.</small></span><input id="doubleSpace" type="checkbox" checked></label>
+        </div>
+        <p class="setting-note">Settings save on this device.</p>
+      </section>
+      <section id="appearance" class="page" hidden>
+        <h1>Appearance</h1><p>Choose your color and glide feedback.</p>
+        <div class="swatches" role="group" aria-label="Accent color">
+          <button data-color="#bd3069" class="swatch selected" style="--swatch:#bd3069">Rose</button>
+          <button data-color="#7452bc" class="swatch" style="--swatch:#7452bc">Orchid</button>
+          <button data-color="#107b78" class="swatch" style="--swatch:#107b78">Lagoon</button>
+          <button data-color="#b7503f" class="swatch" style="--swatch:#b7503f">Peach</button>
+        </div>
+        <label class="custom-color">Custom accent <input id="accent" type="color" value="#bd3069"></label>
+        <label class="rule animation-rule"><span><strong>Animate glide feedback</strong><small>Show the path as your finger moves across keys.</small></span><input id="motion" type="checkbox" checked></label>
+        <p class="setting-note">Segoe UI Light headings with Segoe UI text on Windows.</p>
+      </section>
+      <p id="error" class="error" role="alert" hidden></p>
+    </main>
+  </div>
+</body>
+</html>
